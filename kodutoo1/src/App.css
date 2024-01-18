@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+}
+
+.nupp {
+  background-color: green;
+  color: rgb(163, 163, 163);
+}
+
+.nupp:hover {
+  height: 100px;
+}
+
+.nupp:active {
+  cursor: grab;
+}
+
+.tekst {
+  color: blue;
+  font-style: italic;
+}
+
+.tekst:hover {
+  font-size:  24px;
+  
+}
+
+.tekst2 {
+  color: green;
+  font-weight: bold;
+  -webkit-text-stroke: 1px red;
+}
+
+.tekst2:hover {
+  -webkit-text-stroke: 1px brown;
+}
+
+.pilt {
+  height: 200px;
+  width: 300px;
+  float: right;
+}
+
+.pilt:hover {
+  border-radius: 10px;
+  opacity: 0.2;
+}
+
+
