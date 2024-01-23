@@ -42,3 +42,35 @@ h1 {
   font-size: 3.5rem;
     line-height: 4rem;
 }
+
+.ostukorvi-pilt {
+  height: 50px;
+}
+
+.linn {
+  color: #14142b;
+    font-family: Inter,Tahoma,Helvetica,sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+}
+
+.kingitus {
+  height: 100px;
+  float: left;
+}
+
+.pluss  {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  
+}
+
+.miinus  {
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+}
+
+ 
