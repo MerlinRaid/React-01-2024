@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+}
+
+.pilt{
+  width: 100px;
+  height: 100px;
+  float: right;
+}
+
+.nupp {
+   background-color: black;
+   color: white;
+   border-radius: 5px;
+}
+
+.nupp:hover {
+  cursor: pointer;
+}
+
+.nupp:active {
+  background-color:rgb(88, 85, 85);
+  text-decoration: underline;
+}
