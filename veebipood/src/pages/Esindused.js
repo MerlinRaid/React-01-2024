@@ -1,10 +1,26 @@
+import { useState } from "react"
 
 
 function Esindused() {
+  // vasakul pool( []sees) on muutuja, mille sees on muutuv väärtus
+  //    see võib lõpmatuseni muutuda
+  // paremal pool ( []sees) on muutja, tema abil muudan muutujat
+  const[linn, uuendaLinn] = useState("Pärnu");
+
   return (
     <div>
     <div>Esindused</div>
-    <span className="linn">Tallinn(7)</span>
+    <span className="linn"onClick={() => uuendaLinn("Tallinn")}>Tallinn(7)</span>
+    <span className="linn"onClick={() => uuendaLinn("Tartu")}>Tartu(2)</span>
+    <span className="linn"onClick={() => uuendaLinn("Narva")} >Narva(1)</span>
+    <span className="linn"onClick={() => uuendaLinn("Pärnu")}> Pärnu(1)</span>
+    <br /> <br />  
+    {/* br on vaheride vahepeal on vaja panna br x2, et toimiks */}
+
+    <div>Aktiivne linn: {linn} </div>
+
+    { linn === "Tallinn" && 
+    <div>
       <div>Ülemiste</div>
       <div>Viimsi</div>
       <div>Rocca al Mare</div>
@@ -12,16 +28,17 @@ function Esindused() {
       <div>Vesse</div>
       <div>Kristiine</div>
       <div>Järveotsa</div>
-    <span className="linn">Tartu(2)</span>
+    </div>}
+    
+    { linn === "Tartu" && <div>
       <div>Raatuse</div>
       <div>Lõunakeskus</div>
-    <span className="linn">Narva(1)</span>
-      <div>Fama</div>
-    <span className="linn"> Pärnu(1)</span>
-      <div>Port Artur 2</div>
+    </div>}
+   
+      { linn === "Narva" && <div>Fama</div>}
     
-
-
+      { linn === "Pärnu" && <div>Port Artur 2</div>}
+    
     </div>
   )
 }

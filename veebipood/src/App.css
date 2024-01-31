@@ -10,11 +10,12 @@
 .pilt:hover {
   cursor: pointer;
   opacity: 70%;
+  transform: scale(1.1);
 }
 
 .pilt:active {
   transform: rotate(5deg);
-  width: 95px;
+  /* width: 95px; */
 }
 .nupp {
   background-color: brown;
@@ -33,9 +34,28 @@
   text-decoration: underline;
 }
 
-a img:hover {
+.navlink:hover img  {
   /* https://isotropic.co/tool/hex-color-to-css-filter/ */
   filter: invert(32%) sepia(88%) saturate(7145%) hue-rotate(311deg) brightness(87%) contrast(109%);
+}
+
+.nav {
+  background-color: #00000080;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navlink {
+  text-decoration: none;
+}
+
+.navlink span{
+  color: white;
+}
+
+.navlink:hover span {
+color: pink;
 }
 
 h1 {

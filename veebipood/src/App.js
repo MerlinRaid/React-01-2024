@@ -14,36 +14,41 @@ function App() {
   return (
     <div className="App">
 
-      <Link to="avaleht">
-        <img src="https://upload.wikimedia.org/wikipedia/en/9/99/Nobe_GT100.jpg" className="pilt" alt="Logo" />
-      </Link>
+      <div className="nav">
+        <Link to="avaleht">
+          <img src="/logo.png" className="pilt" alt="Logo" />
+        </Link>
+  {/* arendaja vaates converditakse <Link to="esindused">  :  <a href="esindused"> */}
+        <div>
+          <Link  className="navlink" to="esindused">
+            <img src="/esindused.svg" alt="" />
+            <span>Esindused</span>
+          </Link>
 
-      <Link to="esindused">
-        <img src="/esindused.svg" alt="" />
-        <button className="nupp">Esindused</button>
-      </Link>
+          <Link className="navlink"  to="arikliendile">
+            <img src="/ariklient.svg" alt="" />
+            <span>Ärikliendile</span>
+          </Link>
 
-      <Link to="arikliendile">
-        <img src="ariklient.svg" alt="" />
-        <span>Ärikliendile</span>
-      </Link>
+          <Link className="navlink"  to="osta-kinkekaart">
+            <img src="/kinkekaart.svg" alt="" />
+            <span >Kinkekaart</span>
+          </Link>
 
-      <Link to="osta-kinkekaart">
-        <img src="kinkekaart.svg" alt="" />
-        <button className="nupp">Kinkekaart</button>
-      </Link>
+          <Link className="navlink"  to="Lisa-Toode">
+            <span>Lisa Toode</span>
+          </Link>
 
-      <Link to="Lisa-Toode">
-        <button className="nupp">Lisa Toode</button>
-      </Link>
+          <Link className="navlink"  to="Ostukorv">
+            <span>Ostukorv</span>
+          </Link>
 
-      <Link to="Ostukorv">
-        <button className="nupp">Ostukorv</button>
-      </Link>
-
-      <Link to="Seaded">
-        <button className="nupp">Seaded</button>
-      </Link>
+          <Link className="navlink"  to="Seaded">
+            <span>Seaded</span>
+          </Link>
+        </div>
+        <div> </div>
+      </div>
 
       <Routes>
         <Route path= "avaleht" element={ <Avaleht /> } />
