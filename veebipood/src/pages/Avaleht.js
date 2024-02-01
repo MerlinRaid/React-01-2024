@@ -1,7 +1,7 @@
 
 function Avaleht() {
   return (
-    <div>Avaleht
+    <div>Avaleht 
         
     </div>
   )

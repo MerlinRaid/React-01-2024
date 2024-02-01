@@ -48,10 +48,13 @@
 
 .navlink {
   text-decoration: none;
+  margin: 3px;
 }
 
 .navlink span{
   color: white;
+  position: relative;
+  top: -4px;
 }
 
 .navlink:hover span {
@@ -64,7 +67,7 @@ h1 {
 }
 
 .ostukorvi-pilt {
-  height: 50px;
+  height: 70px;
 }
 
 .linn {
@@ -73,24 +76,68 @@ h1 {
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-.kingitus {
-  height: 100px;
-  float: left;
+.linn:hover {
+  color: #e3068c;
+  text-decoration: underline;
 }
 
-.pluss  {
-  height: 30px;
-  width: 30px;
-  border-radius: 100px;
-  
+.linn-aktiivne {
+  color: #14142b;
+    font-family: Inter,Tahoma,Helvetica,sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    margin: 5px;
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-.miinus  {
-  height: 30px;
-  width: 30px;
-  border-radius: 100px;
+.linn-aktiivne:hover {
+  color: #e3068c
 }
 
+.navlink img {
+  height: 25px;
+  width: 25px;
+}
  
+.leht{
+  background-color: lightgray;
+  height:  100vh;
+  /* 100wv ekraani laius */
+  }
+
+.summa {
+background-color: white;
+font-size: 40px;
+font-weight: 700;
+color: rgb(78, 75, 102, .6);
+border: none;
+margin: 2px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.summa-aktiivne {
+  background-color: white;
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(227 6 140); 
+  border: 3px solid rgb(227 6 140);
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+
+.leht{
+background-color: lightgray;
+}
+
+.kingitus{
+  height: 30px;
+  width: 30px;
+}

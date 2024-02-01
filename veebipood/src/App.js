@@ -8,6 +8,7 @@ import Kinkekaart from './pages/Kinkekaart';
 import Ostukorv from './pages/Ostukorv';
 import Seaded from './pages/Seaded';
 import LisaToode from './pages/LisaToode';
+import NotFound from './pages/NotFound';
 
 
 function App() {
@@ -15,35 +16,36 @@ function App() {
     <div className="App">
 
       <div className="nav">
-        <Link to="avaleht">
+        <Link to="/avaleht">
           <img src="/logo.png" className="pilt" alt="Logo" />
         </Link>
   {/* arendaja vaates converditakse <Link to="esindused">  :  <a href="esindused"> */}
         <div>
-          <Link  className="navlink" to="esindused">
+          <Link  className="navlink" to="/esindused">
             <img src="/esindused.svg" alt="" />
             <span>Esindused</span>
           </Link>
 
-          <Link className="navlink"  to="arikliendile">
+          <Link className="navlink"  to="/arikliendile">
             <img src="/ariklient.svg" alt="" />
             <span>Ärikliendile</span>
           </Link>
 
-          <Link className="navlink"  to="osta-kinkekaart">
+          <Link className="navlink"  to="/osta-kinkekaart">
             <img src="/kinkekaart.svg" alt="" />
             <span >Kinkekaart</span>
           </Link>
 
-          <Link className="navlink"  to="Lisa-Toode">
+          <Link className="navlink"  to="/Lisa-Toode">
             <span>Lisa Toode</span>
           </Link>
 
-          <Link className="navlink"  to="Ostukorv">
+          <Link className="navlink"  to="/Ostukorv">
+          <img src="/shopping.svg" alt="" />
             <span>Ostukorv</span>
           </Link>
 
-          <Link className="navlink"  to="Seaded">
+          <Link className="navlink"  to="/Seaded">
             <span>Seaded</span>
           </Link>
         </div>
@@ -58,6 +60,7 @@ function App() {
         <Route path= "Ostukorv" element={ <Ostukorv /> } />
         <Route path= "Seaded" element={ <Seaded /> } />
         <Route path="Lisa-toode" element={ <LisaToode />} />
+        <Route path="*" element={ <NotFound />} />
       </Routes>
     </div>
     // Run-time vs compile-time errors 
