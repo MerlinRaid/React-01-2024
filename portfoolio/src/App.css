@@ -60,3 +60,23 @@
   color: azure;
   cursor: pointer;
 }
+
+.kursus, .tagasi {
+  font-size: 20px;
+  font-weight: 70;
+  color: black ; 
+  border: 1px solid black;
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.kursus-aktiivne {
+  font-size: 20px;
+  font-weight: 70;
+  color: red ; 
+  border: 2px solid black;
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
