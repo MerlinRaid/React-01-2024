@@ -62,6 +62,7 @@ function App() {
         <Route path="Lisa-toode" element={ <LisaToode />} />
         <Route path="*" element={ <NotFound />} />
       </Routes>
+      
     </div>
     // Run-time vs compile-time errors 
     // Kompileerimise (kokkupakkimise) erroreid näen seal kus panin "npm start" ja brauser on üleni punane

@@ -1,18 +1,37 @@
+import { useRef, useState } from "react"
 
 function LisaToode() {
+  const[sonum, muudaSonum] = useState ("");
+  const inputiLuger = useRef (); // inputi seest kasutaja sisestuse lugemiseks
+
+ //function lis (){} samas mis const lisa
+
+  const lisa = () => {
+    //muudaKogus(kogus + 1)
+    // hind === 20 ? "" : ""
+    if (inputiLuger.current.value === "") {
+      muudaSonum("Tühja nimetusega ei saa toodet lisada!")
+    } else {
+      muudaSonum("Toode lisatud: " + inputiLuger.current.value);
+    }   
+}
+
   return (
     <div>
-        <div>LisaToode</div>
-        <h1>The input element</h1>
-        <form action="/action_page.php">
-        <label htmlFor="fname">First name:</label>
-        <input type="text" id="fname" name="fname" /><br /><br />
-        <label htmlFor="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" /><br /><br />
-        <input type="submit" value="Submit" />
-      </form>
-    <p>Click the "Submit" button and the form-data will be sent to a page on the 
-server called "action_page.php".</p>
+      <h1>{sonum}</h1>
+        {/* <form action="/action_page.php">  kui tehakse ikkagi Reacti tutorialis <form> --> 
+        siis tehakse funktsioonis event.preventDefault */}
+          
+          <label>Toote nimetus:</label>
+          <input type="text" ref={inputiLuger} /><br /><br />
+
+          <label htmlFor="lname">Last name:</label>
+          <input type="text" id="lname" name="lname" /><br /><br />
+          {/* <input type="submit" value="Submit" /> */}
+
+          <button onClick={lisa}>Sisesta</button>
+      
+      {/* </form> */}
     </div>
   )
 }
