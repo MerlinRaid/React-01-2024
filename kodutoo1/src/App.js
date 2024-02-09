@@ -1,67 +1,85 @@
-/* eslint-disable jsx-a11y/iframe-has-title */
-// import logo from './logo.svg';
+import { Link, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Avaleht from './pages/Avaleht';
+import Kontakt from './pages/Kontakt';
+import Meist from './pages/Meist';
+import Seaded from './pages/Seaded';
+import { useState } from 'react';
+import { useRef} from 'react';
+import Leht from './pages/Leht';
+import Loader from './pages/Loader';
 
 function App() {
+  const [sisselogitud, muudaSisseLogitud] = useState("ei");
+  const [sonum,muudaSonum] = useState ("");
+  const kasutajaNimiRef = useRef();
+  const paroolRef = useRef();
+
+  const logiSisse = () => {
+    if(paroolRef.current.value === "123"){
+    muudaSisseLogitud("jah");
+    muudaSonum(kasutajaNimiRef.current.value + "Oled sisselogitud");
+    }else{
+    muudaSonum("Vale parool");
+    }
+  }
+  const logivalja =() => {
+    muudaSisseLogitud ("ei");
+    muudaSonum ("Oeld välja logitud!");
+  }
+
   return (
     <div className="App">
-      <button className="nupp">Nupp</button>
-      <div className="tekst">Tekst</div>
-      <h2 className="tekst2">Tekst</h2>
-      <img src="https://t4.ftcdn.net/jpg/05/74/26/31/360_F_574263101_TJBaEd9BGd36eO1TlPhnl8apExNEdq8n.jpg" className="pilt" alt="Logo" />
-      
+      <div>{sonum}</div>
+      { sisselogitud === "ei" && <div>
+      <label>Kasutajanimi</label> <br />
+      <input type="text" ref={kasutajaNimiRef} /> <br />
+      <label>Parool</label> <br />
+      <input type="password" ref={paroolRef} /> <br />
+      </div>}
 
-      <iframe 
-      width="560" 
-      height="315" 
-      src="https://www.youtube.com/embed/mcOjTPSLEeA?si=hn-iz0JREdDtDcsJ" 
-      title="YouTube video player"
-       frameborder="0" 
-       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-       allowfullscreen>
 
-       </iframe>
-      
-      <h2>HTML Table</h2>
+      { sisselogitud === "ei" &&  <button onClick={logiSisse}>Logi sisse</button>}
+      {sisselogitud === "jah" && <button onClick={logivalja}>Logi välja</button>} <br /><br />
 
-<table>
-  <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-</table>
-    </div>
+      <Link to="/">
+            <button>Avaleht</button>
+      </Link>
+
+      <Link to="kontakt">
+      <button>Kontakt</button>
+      </Link>
+
+      <Link to="meist">
+        <button>Meist</button>
+      </Link>
+
+      <Link to="seaded">
+        <button>Seaded</button>
+      </Link>
+
+      <Link to="leht">
+        <button>Leht</button>
+      </Link>
+
+      <Link to="loader">
+        <button>Loader</button>
+      </Link>
+
+        
+
+        
+  
+  <Routes>
+  <Route path='' element= { <Avaleht />}/>
+  <Route path='kontakt' element= { <Kontakt /> } />
+  <Route path='meist' element= { <Meist /> } />
+  <Route path='seaded' element= { <Seaded /> } />
+  <Route path='leht' element= { <Leht /> } />
+  <Route path='loader' element= { <Loader /> } />
+  </Routes>
+
+</div>
     
   );
 }
