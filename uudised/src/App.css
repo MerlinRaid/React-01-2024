@@ -22,3 +22,7 @@
   background-color:rgb(88, 85, 85);
   text-decoration: underline;
 }
+
+.valitud {
+  font-weight: bold;
+}
