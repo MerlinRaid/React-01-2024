@@ -1,4 +1,5 @@
 import { useState } from "react"
+import toast, { Toaster } from 'react-hot-toast';
 
 function LisaArvuti() { 
   const [message, setMessage] = useState("Lisa arvuti!");
@@ -7,6 +8,7 @@ function LisaArvuti() {
   function addProduct (){
     setMessage ("Arvuti lisatud!");
     uuendaN2itaNuppu(false);
+    toast.success("Arvuti lisatud!")
     
   }
    
@@ -20,6 +22,8 @@ function LisaArvuti() {
         <label>Maksumus</label> <br />
         <input type="number" /> <br />
       { n2itaNuppu === true && <button onClick={ () => addProduct( )}>Sisesta</button>}
+
+      <Toaster />
     </div>
   )
 }

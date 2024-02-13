@@ -8,6 +8,7 @@ import { useState } from 'react';
 import { useRef} from 'react';
 import Leht from './pages/Leht';
 import Loader from './pages/Loader';
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   const [sisselogitud, muudaSisseLogitud] = useState("ei");
@@ -16,16 +17,35 @@ function App() {
   const paroolRef = useRef();
 
   const logiSisse = () => {
-    if(paroolRef.current.value === "123"){
-    muudaSisseLogitud("jah");
-    muudaSonum(kasutajaNimiRef.current.value + "Oled sisselogitud");
-    }else{
-    muudaSonum("Vale parool");
-    }
-  }
+      if (paroolRef.current.value.length < 8){
+        toast.error("Parool on liiga lühike");
+    return;
+       }
+
+       if (paroolRef.current.value.toLowerCase() === paroolRef.current.value) {
+        toast.error("Prool peab sisaldama vähemalt ühte suurt tähte!");
+        return; 
+      } 
+
+      if (paroolRef.current.value.toUpperCase() === paroolRef.current.value) {
+        toast.error("Prool peab sisaldama vähemalt ühte väikest tähte!");
+        return; 
+      } 
+
+      if (paroolRef.current.value.includes("%") === false) {
+        toast.error("Prool peab sisaldama % !");
+        return; 
+      } 
+
+
+      muudaSisseLogitud("jah");
+      toast.success(kasutajaNimiRef.current.value + ",Oled sisse logitud");
+      }
+    
   const logivalja =() => {
     muudaSisseLogitud ("ei");
-    muudaSonum ("Oeld välja logitud!");
+    toast.success("Oled välja logitud!");
+    
   }
 
   return (
@@ -79,6 +99,11 @@ function App() {
   <Route path='loader' element= { <Loader /> } />
   </Routes>
 
+  <ToastContainer
+  position="top-right"
+  autoClose={5000}
+  theme="dark"
+  />
 </div>
     
   );
