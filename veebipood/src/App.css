@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.App-dark {
+  background-color: black;
+  color: white;
+  text-align: center;
+  min-height: 100vh;
+  /* vh --> view height protsentides */
+}
+
+
 .pilt{
   width: 100px;
   /* height: 200px; */
@@ -71,7 +80,7 @@ h1 {
 }
 
 .linn {
-  color: #14142b;
+  /* color: #14142b; */
     font-family: Inter,Tahoma,Helvetica,sans-serif;
     font-size: 24px;
     font-weight: 600;
@@ -86,7 +95,7 @@ h1 {
 }
 
 .linn-aktiivne {
-  color: #14142b;
+  /* color: #14142b; */
     font-family: Inter,Tahoma,Helvetica,sans-serif;
     font-size: 24px;
     font-weight: 600;
@@ -140,4 +149,8 @@ background-color: lightgray;
 .kingitus{
   height: 30px;
   width: 30px;
+}
+
+.kuldne {
+  color: goldenrod;
 }

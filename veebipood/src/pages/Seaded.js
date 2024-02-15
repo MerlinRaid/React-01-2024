@@ -1,8 +1,8 @@
 import { useRef, useState } from "react"
 import { ToastContainer, toast } from 'react-toastify';
 
-function Seaded() {
-  const [keel, muudaKeel] = useState("ee");
+function Seaded() { // kui localStorage-s sellist võtit ei ole, tuleb väärtuseks "null"
+  const [keel, muudaKeel] = useState(localStorage.getItem ("keel") || "ee");
   const emailRef = useRef();
   const aadressRef = useRef();
   const telefonRef = useRef();
@@ -62,9 +62,36 @@ function Seaded() {
    
   }
 
+  const uuendaKeelEE = () => {
+    muudaKeel("ee")
+    localStorage.setItem ("keel", "ee");
+  }
+
+  const uuendaKeelRU = () => {
+    muudaKeel("ru")
+    localStorage.setItem ("keel", "ru");
+  }
+
+  const uuendaKeelEN = () => {
+    muudaKeel("en")
+    localStorage.setItem ("keel", "en");
+  }
+
   return (
     <div>
         <div>Seaded</div>
+
+
+        {keel === "ee" && <div>Leht on eesti keelne</div>}
+        {keel === "ru" && <div>Cтpaницa на русском языке</div>}
+        {keel === "en" && <div>The page is in English</div>}
+
+        <button onClick={uuendaKeelEE}>Est</button>
+        <button onClick={uuendaKeelRU}>Rus</button>
+        <button onClick={uuendaKeelEN}>Eng</button>
+
+<br /><br />
+
 
         <label>Email</label> <br />
         <input type="" ref={emailRef}/> <br />
@@ -84,14 +111,7 @@ function Seaded() {
 
 
         <br /><br />
-        {keel === "ee" && <div>Leht on eesti keelne</div>}
-        {keel === "ru" && <div>Cтpaницa на русском языке</div>}
-        {keel === "en" && <div>The page is in English</div>}
-
-        <button onClick={() => muudaKeel ("ee")}>Est</button>
-        <button onClick={() => muudaKeel ("ru")}>Rus</button>
-        <button onClick={() => muudaKeel ("en")}>Eng</button>
-
+       
         <ToastContainer
         position="bottom-right"
         autoClose={4000}
