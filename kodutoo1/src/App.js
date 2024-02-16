@@ -9,6 +9,7 @@ import { useRef} from 'react';
 import Leht from './pages/Leht';
 import Loader from './pages/Loader';
 import { ToastContainer, toast } from 'react-toastify';
+import Logimiseks from './pages/Logimiseks';
 
 function App() {
   const [sisselogitud, muudaSisseLogitud] = useState("ei");
@@ -39,7 +40,7 @@ function App() {
 
 
       muudaSisseLogitud("jah");
-      toast.success(kasutajaNimiRef.current.value + ",Oled sisse logitud");
+      muudaSonum (kasutajaNimiRef.current.value + ",Oled sisse logitud");
       }
     
   const logivalja =() => {
@@ -86,6 +87,10 @@ function App() {
         <button>Loader</button>
       </Link>
 
+      <Link to="logimiseks">
+        <button>Logimiseks</button>
+      </Link>
+
         
 
         
@@ -97,6 +102,9 @@ function App() {
   <Route path='seaded' element= { <Seaded /> } />
   <Route path='leht' element= { <Leht /> } />
   <Route path='loader' element= { <Loader /> } />
+  <Route path='logimiseks' element= { <Logimiseks /> } />
+  
+
   </Routes>
 
   <ToastContainer
