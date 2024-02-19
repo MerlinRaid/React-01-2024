@@ -2,7 +2,17 @@ import { Link } from "react-router-dom" ;
 
 function Navbar() {
 return (
-    <div>
+  <div>
+
+<iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/4cEKAYnxbrk?si=9c3-CjjYXGrHqtkL" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe>
+
         <img className="main-picture" src="https://cdn.pixabay.com/photo/2016/06/03/13/39/success-1433400_1280.jpg" alt=''/>
       <div className="rectangle" ></div>
 

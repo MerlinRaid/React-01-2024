@@ -6,6 +6,13 @@ function Esindused() {
   //    see võib lõpmatuseni muutuda
   // paremal pool ( []sees) on muutja, tema abil muudan muutujat
   const[linn, uuendaLinn] = useState("Pärnu");
+  
+  const [keskused, uuendaKeskused] = useState(["Ülemist", "Viimsi", "Rocca al Mare" , "Magistrali", "Kristiine", "Järveotsa"]);
+
+const sorteeriAZ = () => {
+  keskused.sort();
+  uuendaKeskused(keskused.slice());
+}
 
   return (
     <div>
@@ -21,13 +28,8 @@ function Esindused() {
 
     { linn === "Tallinn" && 
     <div>
-      <div>Ülemiste</div>
-      <div>Viimsi</div>
-      <div>Rocca al Mare</div>
-      <div>Magistrali</div>
-      <div>Vesse</div>
-      <div>Kristiine</div>
-      <div>Järveotsa</div>
+      <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
+      {keskused.map(keskus  => <div>{keskus}</div>)}
     </div>}
     
     { linn === "Tartu" && <div>

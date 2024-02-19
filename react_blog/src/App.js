@@ -13,7 +13,7 @@ function App() {
     <Router>
       <TopBar />
       <Routes>
-        <Route exact path="/" element={<Homepage />}></Route>
+        <Route path="/" element={<Homepage />}></Route>
         <Route path="/posts" element={<Homepage />}></Route>
         <Route path="/register" element={currentUser ? <Homepage /> : <Register />}></Route>
         <Route path="/login" element={currentUser ? <Homepage /> : <Login />}></Route>

@@ -39,7 +39,7 @@ function Logimiseks() {
       <label>Parool</label> <br />
       <input onChange={kontolliParool} type="password" ref={paroolRef} /> <br />
       <button>Logi sisse</button>
-      {paroolKorrektne === true && <div>Parool pole korrektne</div>}
+      {paroolKorrektne === false && <div>Parool pole korrektne</div>}
       
     </div>
   )

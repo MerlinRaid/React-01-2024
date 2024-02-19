@@ -12,7 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import Logimiseks from './pages/Logimiseks';
 
 function App() {
-  const [sisselogitud, muudaSisseLogitud] = useState("ei");
+  const [sisselogitud, muudaSisseLogitud] = useState(false);
   const [sonum,muudaSonum] = useState ("");
   const kasutajaNimiRef = useRef();
   const paroolRef = useRef();
@@ -39,12 +39,12 @@ function App() {
       } 
 
 
-      muudaSisseLogitud("jah");
+      muudaSisseLogitud(true);
       muudaSonum (kasutajaNimiRef.current.value + ",Oled sisse logitud");
       }
     
   const logivalja =() => {
-    muudaSisseLogitud ("ei");
+    muudaSisseLogitud (false);
     toast.success("Oled välja logitud!");
     
   }
@@ -52,7 +52,7 @@ function App() {
   return (
     <div className="App">
       <div>{sonum}</div>
-      { sisselogitud === "ei" && <div>
+      { sisselogitud === false && <div>
       <label>Kasutajanimi</label> <br />
       <input type="text" ref={kasutajaNimiRef} /> <br />
       <label>Parool</label> <br />
@@ -60,8 +60,8 @@ function App() {
       </div>}
 
 
-      { sisselogitud === "ei" &&  <button onClick={logiSisse}>Logi sisse</button>}
-      {sisselogitud === "jah" && <button onClick={logivalja}>Logi välja</button>} <br /><br />
+      { sisselogitud === false &&  <button onClick={logiSisse}>Logi sisse</button>}
+      {sisselogitud === true && <button onClick={logivalja}>Logi välja</button>} <br /><br />
 
       <Link to="/">
             <button>Avaleht</button>
