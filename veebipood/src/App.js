@@ -10,6 +10,9 @@ import Seaded from './pages/Seaded';
 import LisaToode from './pages/LisaToode';
 import NotFound from './pages/NotFound';
 import { useState } from 'react';
+import Tootajad from './pages/Tootajad';
+import Hinnad from './pages/Hinnad';
+import Tooted from './pages/Tooted';
 
 
 function App() {                        //ture või false
@@ -64,6 +67,18 @@ const heledaks = () => {
           <Link className="navlink"  to="/Seaded">
             <span>Seaded</span>
           </Link>
+
+          <Link className="navlink"  to="/Tootajad">
+            <span>Töötajad</span>
+          </Link>
+
+          <Link className="navlink"  to="/Hinnad">
+            <span>Hinnad</span>
+          </Link>
+
+          <Link className="navlink"  to="/Tooted">
+            <span>Tooted</span>
+          </Link>
         </div>
         <div> 
           <button onClick={tumedaks}>Tume</button>
@@ -80,6 +95,9 @@ const heledaks = () => {
         <Route path= "Seaded" element={ <Seaded /> } />
         <Route path="Lisa-toode" element={ <LisaToode />} />
         <Route path="*" element={ <NotFound />} />
+        <Route path="Tootajad" element={ <Tootajad />} />
+        <Route path="Hinnad" element={ <Hinnad />} />
+        <Route path="Tooted" element={ <Tooted />} />
       </Routes>
       
     </div>

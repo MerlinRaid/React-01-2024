@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
@@ -12,8 +12,27 @@ import React from 'react'
 
 
 function Tootajad() {
+  const [tootajad, uuendaTootajad] = useState(["Urmet", "Kaido", "Liina", "Maiki"])
+
+  const  sorteeriAZ= () => {
+    tootajad.sort();
+    uuendaTootajad(tootajad.slice());
+  }
+
   return (
-    <div>Tootajad</div>
+    <div>
+
+    {tootajad.length > 0 &&
+    <div>
+  <   button onClick={sorteeriAZ}>Sorteeri A-Z</button>
+      {tootajad.map(tootaja => <div>{tootaja}</div> )}
+      <div>Hetkel on {tootajad.length} töötajat. </div>
+      <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
+    </div>}
+
+     {tootajad.length === 0 &&  <div>Ühtegi töötajat pole nähtav!</div>}
+
+    </div>
   )
 }
 
