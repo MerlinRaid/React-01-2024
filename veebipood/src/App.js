@@ -39,47 +39,47 @@ const heledaks = () => {
           <img src="/logo.png" className="pilt" alt="Logo" />
         </Link>
   {/* arendaja vaates converditakse <Link to="esindused">  :  <a href="esindused"> */}
-        <div>
-          <Link  className="navlink" to="/esindused">
-            <img src="/esindused.svg" alt="" />
-            <span>Esindused</span>
-          </Link>
+          <div>
+            <Link  className="navlink" to="/esindused">
+              <img src="/esindused.svg" alt="" />
+              <span>Esindused</span>
+            </Link>
 
-          <Link className="navlink"  to="/arikliendile">
-            <img src="/ariklient.svg" alt="" />
-            <span>Ärikliendile</span>
-          </Link>
+            <Link className="navlink"  to="/arikliendile">
+              <img src="/ariklient.svg" alt="" />
+              <span>Ärikliendile</span>
+            </Link>
 
-          <Link className="navlink"  to="/osta-kinkekaart">
-            <img src="/kinkekaart.svg" alt="" />
-            <span >Kinkekaart</span>
-          </Link>
+            <Link className="navlink"  to="/osta-kinkekaart">
+              <img src="/kinkekaart.svg" alt="" />
+              <span >Kinkekaart</span>
+            </Link>
 
-          <Link className="navlink"  to="/Lisa-Toode">
-            <span>Lisa Toode</span>
-          </Link>
+            <Link className="navlink"  to="/Lisa-Toode">
+              <span>Lisa Toode</span>
+            </Link>
 
-          <Link className="navlink"  to="/Ostukorv">
-          <img src="/shopping.svg" alt="" />
-            <span>Ostukorv</span>
-          </Link>
+            <Link className="navlink"  to="/Ostukorv">
+            <img src="/shopping.svg" alt="" />
+              <span>Ostukorv</span>
+            </Link>
 
-          <Link className="navlink"  to="/Seaded">
-            <span>Seaded</span>
-          </Link>
+            <Link className="navlink"  to="/Seaded">
+              <span>Seaded</span>
+            </Link>
 
-          <Link className="navlink"  to="/Tootajad">
-            <span>Töötajad</span>
-          </Link>
+            <Link className="navlink"  to="/Tootajad">
+              <span>Töötajad</span>
+            </Link>
 
-          <Link className="navlink"  to="/Hinnad">
-            <span>Hinnad</span>
-          </Link>
+            <Link className="navlink"  to="/Hinnad">
+              <span>Hinnad</span>
+            </Link>
 
-          <Link className="navlink"  to="/Tooted">
-            <span>Tooted</span>
-          </Link>
-        </div>
+            <Link className="navlink"  to="/Tooted">
+              <span>Tooted</span>
+            </Link>
+          </div>
         <div> 
           <button onClick={tumedaks}>Tume</button>
           <button onClick={heledaks}>Hele</button>
@@ -94,10 +94,10 @@ const heledaks = () => {
         <Route path= "Ostukorv" element={ <Ostukorv /> } />
         <Route path= "Seaded" element={ <Seaded /> } />
         <Route path="Lisa-toode" element={ <LisaToode />} />
-        <Route path="*" element={ <NotFound />} />
         <Route path="Tootajad" element={ <Tootajad />} />
         <Route path="Hinnad" element={ <Hinnad />} />
         <Route path="Tooted" element={ <Tooted />} />
+        <Route path="*" element={ <NotFound />} />
       </Routes>
       
     </div>
