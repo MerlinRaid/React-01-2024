@@ -10,6 +10,8 @@ import Leht from './pages/Leht';
 import Loader from './pages/Loader';
 import { ToastContainer, toast } from 'react-toastify';
 import Logimiseks from './pages/Logimiseks';
+import Books from './pages/Books';
+import Numbrid from './pages/Numbrid';
 
 function App() {
   const [sisselogitud, muudaSisseLogitud] = useState(false);
@@ -91,6 +93,14 @@ function App() {
         <button>Logimiseks</button>
       </Link>
 
+      <Link to="books">
+        <button>Books</button>
+      </Link>
+
+      <Link to="numbrid">
+        <button>Numbrid</button>
+      </Link>
+
         
 
         
@@ -103,8 +113,8 @@ function App() {
   <Route path='leht' element= { <Leht /> } />
   <Route path='loader' element= { <Loader /> } />
   <Route path='logimiseks' element= { <Logimiseks /> } />
-  
-
+  <Route path='books' element= { <Books /> } />
+  <Route path='numbrid' element= { <Numbrid /> } />
   </Routes>
 
   <ToastContainer
