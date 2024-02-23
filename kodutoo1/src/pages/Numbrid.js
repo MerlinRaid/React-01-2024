@@ -68,7 +68,7 @@ function Numbrid() {
 
   return (
     <div>
-
+        <br /><br />
         <button onClick={sorteeriKasvavalt}>Sorteeri Kasvavalt</button>
         <button onClick={sorteeriKahanevalt}>Sorteeri Kahanevalt</button>
         <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
