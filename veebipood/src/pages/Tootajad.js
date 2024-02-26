@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
+import tootajadJSON from "../data/tootajad.json";
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
@@ -12,14 +13,14 @@ import React, { useState } from 'react'
 
 
 function Tootajad() {
-  const [tootajad, uuendaTootajad] = useState(["Urmet", "Kaido", "Liina", "Maiki", "Heidi", "Kaire", "Anet", "Maarja", "Epp"])
+  const [tootajad, uuendaTootajad] = useState(tootajadJSON)
 
 // sorteeritakse KAS sõnu või numbreid
 // kui võrdlen sõnu (tähti) --> a.localeCompare(b)
 // kui võrdlen numbreid     --> a - b
 
   const originaal = () => {
-    uuendaTootajad (["Urmet", "Kaido", "Liina", "Maiki", "Heidi", "Kaire", "Anet", "Maarja", "Epp"])
+    uuendaTootajad (tootajadJSON)
   }
 
   const sorteeriAZ= () => {
@@ -75,7 +76,16 @@ function Tootajad() {
   }
 
 
+  const nimiRef = useRef();
 
+  const lisa = () => {
+    tootajad.push(nimiRef.current.value);
+    uuendaTootajad(tootajad.slice());
+  }
+
+  // Töötajate.js vaates kodus:
+  // 1. Kustumaine
+  // 2. Igaühe lõppu lisamise võimekus
 
   return (
     <div>
@@ -104,6 +114,11 @@ function Tootajad() {
         <div>Hetkel on {tootajad.length} töötajat. </div>
         <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
       </div>}
+
+      <label>Uue töötaja nimi</label> <br />
+      <input ref={nimiRef} type="text" /> <br />
+      <button onClick={lisa}>Lisa</button><br />
+
 
       {tootajad.length === 0 &&  <div>Ühtegi töötajat pole nähtav!</div>}
 

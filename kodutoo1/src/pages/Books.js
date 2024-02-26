@@ -56,32 +56,45 @@ const sorteeriSonaPikkus = () => {
       uuendaBooks(vastus);
     }
     
-    const filtreeriRohkemKui3Sonalised = () => {
-      const vastus = books.filter(book => {
-        const sonadeArv = book.split(' ').length;
-        return sonadeArv >= 3;
-      });
-      uuendaBooks(vastus);
-    }
-    
-    // const filtreeriEelviimaneTahtOnC =() => {
-    //   const vastus = books.filter(b=> b.length-2("c") === true);
+
+    // cahtGPT lahendus:
+    // const filtreeriRohkemKui3Sonalised = () => {
+    //   const vastus = books.filter(book => {
+    //     const sonadeArv = book.split(' ').length;
+    //     return sonadeArv >= 3;
+    //   });
     //   uuendaBooks(vastus);
     // }
 
+
+    //Meie lahendus:
+    const filtreeriRohkemKui3Sonalised = () => {
+      const vastus = books.filter(book => book.split(' ').length >= 3);
+      uuendaBooks(vastus);
+    }
+    
+    // chatGPT lahendus:
+    // const filtreeriEelviimaneTahtOnC = () => {
+    //   const vastus = books.filter(book => {
+    //     if (book.length >= 2) {
+    //       const eelviimaneTaht = book.charAt(book.length - 2);
+    //       return eelviimaneTaht.toLowerCase() === 'c';
+    //     }
+    //     return false; 
+    //   });
+    //   uuendaBooks(vastus);
+    // }
+
+
+    // meie lahendus, kuidas võiks teha
     const filtreeriEelviimaneTahtOnC = () => {
-      const vastus = books.filter(book => {
-        if (book.length >= 2) {
-          const eelviimaneTaht = book.charAt(book.length - 2);
-          return eelviimaneTaht.toLowerCase() === 'c';
-        }
-        return false; 
-      });
+      const vastus = books.filter(book => book.charAt(book.length - 2) === "c");
       uuendaBooks(vastus);
     }
 
-   
-
+    // .length -> 10
+    //  0123456789
+    // "Tõde ja õi"
 
 
    

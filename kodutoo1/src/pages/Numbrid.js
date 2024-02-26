@@ -12,6 +12,18 @@ function Numbrid() {
         uuendaNumbrid(numbrid.slice());
       }
 
+    //   // ChatGPT1
+    // const sorteeriKasvavalt = () => {
+    //     const vastus = [...numbrid].sort((a, b) => a - b);
+    //     uuendaNumbrid(vastus);
+    //   }
+
+    // ChatGPT2
+    // const sorteeriKasvavalt = () => {
+    //   numbrid.sort((a, b) => a - b);
+    //   uuendaNumbrid([...numbrid]); //numbris.slice() ja [...numbrid] teeb sama välja
+    // }
+
       const   sorteeriKahanevalt = () => {
         numbrid.sort((a, b) => b - a);
         uuendaNumbrid(numbrid.slice());
@@ -29,40 +41,55 @@ function Numbrid() {
   }
 
   const filtreeriSuuremadKui8 =() => {
-    const vastus = numbrid.filter(n => n > 5);
+    const vastus = numbrid.filter(nr => nr > 5);
    uuendaNumbrid(vastus);
   }
 
   const filtreeriVaiksemadKui10 =() => {
-    const vastus = numbrid.filter(n => n < 10);
+    const vastus = numbrid.filter(nr => nr < 10);
    uuendaNumbrid(vastus);
   }
 
   const filtreeriPaarisarvud = () => {
-    const vastus = numbrid.filter(n => n % 2 === 0);
+    const vastus = numbrid.filter(nr => nr % 2 === 0);
     uuendaNumbrid(vastus);
   }
 
   const filtreeriPaaritudArvud = () => {
-    const vastus = numbrid.filter(n => n % 2 !== 0);
+    const vastus = numbrid.filter(nr => nr % 2 !== 0);
     uuendaNumbrid(vastus);
   }
   
-  const filtreeriAlgavad1 = () => {
-    const vastus = numbrid.filter(n => {
-      const numStr = n.toString();
-      return numStr.startsWith('1');
-    });
-    uuendaNumbrid(vastus);
-  }
+  // ChatGPT lahendus:
+  // const filtreeriAlgavad1 = () => {
+  //   const vastus = numbrid.filter(n => {
+  //     const numStr = n.toString();
+  //     return numStr.startsWith('1');
+  //   });
+  //   uuendaNumbrid(vastus);
+  // }
 
+  //Meie lahendus:
+  const filtreeriAlgavad1 = () => {
+     const vastus = numbrid.filter(number => number.toString().startsWith('1'));
+     uuendaNumbrid(vastus);
+     }
+
+
+// ChatGPT lahendus:
+  // const filtreeriSisaldavad3 = () => {
+  //   const vastus = numbrid.filter(n => {
+  //     const numStr = n.toString();
+  //     return numStr.includes('3');
+  //   });
+  //   uuendaNumbrid(vastus);
+  // }
+
+  //Meie lahendus:
   const filtreeriSisaldavad3 = () => {
-    const vastus = numbrid.filter(n => {
-      const numStr = n.toString();
-      return numStr.includes('3');
-    });
+    const vastus = numbrid.filter(number => number.toString().includes('3'));
     uuendaNumbrid(vastus);
-  }
+    }
 
     
 
