@@ -87,6 +87,16 @@ function Tootajad() {
   // 1. Kustumaine
   // 2. Igaühe lõppu lisamise võimekus
 
+  const kustutaTootaja =(index) => {
+    tootajad.splice(index, 1);
+    uuendaTootajad(tootajad.slice());
+   }
+
+   const lisaTootaja = (uusTootaja) => {
+    tootajad.push(uusTootaja);
+    uuendaTootajad(tootajad.slice());
+  }
+
   return (
     <div>
 
@@ -110,8 +120,12 @@ function Tootajad() {
         <button onClick={filtreeriLyhendigaAi}>Filtreeri kellel on see lühend 'ai'</button>
 
 
-        {tootajad.map(tootaja => <div>{tootaja}</div> )}
-        <div>Hetkel on {tootajad.length} töötajat. </div>
+        {tootajad.map((tootaja, index) => <div>{tootaja}
+          <button onClick={() => kustutaTootaja(index)}>Kustuta</button> 
+          <button onClick={() => lisaTootaja(tootaja)}>Lisa lõppu juurde</button>
+          </div> )}
+
+        <div>Hetke on {tootajad.length} töötajat. </div>
         <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
       </div>}
 

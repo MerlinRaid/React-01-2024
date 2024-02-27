@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 
 function Esindused() {
@@ -8,9 +8,26 @@ function Esindused() {
   const[linn, uuendaLinn] = useState("Pärnu");
   
   const [keskused, uuendaKeskused] = useState(["Ülemist", "Viimsi", "Rocca al Mare" , "Magistrali", "Kristiine", "Järveotsa"]);
+  const nimiRef = useRef();
+
 
 const sorteeriAZ = () => {
   keskused.sort();
+  uuendaKeskused(keskused.slice());
+}
+
+const kustutaTallinnaEsindus =(index) => {
+  keskused.splice(index, 1);
+  uuendaKeskused(keskused.slice());
+ }
+ 
+ const lisaTallinnaEsindus= (uusKeskus) => {
+   keskused.push(uusKeskus);
+   uuendaKeskused(keskused.slice());
+ }
+
+ const lisa = () => {
+  keskused.push(nimiRef.current.value);
   uuendaKeskused(keskused.slice());
 }
 
@@ -29,7 +46,14 @@ const sorteeriAZ = () => {
     { linn === "Tallinn" && 
     <div>
       <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
-      {keskused.map(keskus  => <div>{keskus}</div>)}
+      {keskused.map((keskus,index)  => <div>{keskus}
+          <button onClick={() => kustutaTallinnaEsindus(index)}>Kustuta</button> 
+          <button onClick={() => lisaTallinnaEsindus(keskus)}>Lisa lõppu üks juurde</button> 
+    </div>)}
+
+      <label>Uue Esinduse nimi</label> <br />
+      <input ref={nimiRef} type="text" /> <br />
+      <button onClick={lisa}>Lisa</button><br />
       {/* 
       KOJU:
       Kustutamise võimekus
