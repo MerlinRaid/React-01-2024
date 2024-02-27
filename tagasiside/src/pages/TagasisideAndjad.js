@@ -3,7 +3,7 @@ import nimedJSON from "../nimed.json"
 
 function TagasisideAndjad() {
     const [tagasisideAndjad, uuendaTagasisideAndjad] = useState (nimedJSON)
-    const tagasisideAndjaRef = useRef
+    const tagasisideRef = useRef ();
 
     const filtreeriMTahegaAlgavad = () => {
         const vastus = tagasisideAndjad.filter(ta => ta.startsWith("M"));
@@ -31,10 +31,12 @@ function TagasisideAndjad() {
       }
 
       const lisaTagasisideAndja = () => {
-        tagasisideAndjad.push(tagasisideAndjaRef.current.value);
+        tagasisideAndjad.push(tagasisideRef.current.value);
         uuendaTagasisideAndjad(tagasisideAndjad.slice())
       }
 
+
+      
 
   return (
     <div> <h2>Tagasiside Andjad:</h2>
@@ -54,10 +56,9 @@ function TagasisideAndjad() {
         </div> )}
 
        <h4><label>Lisa tagasiside andja</label></h4> 
-        <input useRef={tagasisideAndjaRef} type="text" />
+        <input ref={tagasisideRef} type="text" />
         <button onClick={lisaTagasisideAndja}>Lisa</button>
     
-
     </div>
   )
 }
