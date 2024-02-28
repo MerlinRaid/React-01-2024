@@ -35,6 +35,10 @@ function TagasisideAndjad() {
         uuendaTagasisideAndjad(tagasisideAndjad.slice())
       }
 
+      // const insertEST = () => {
+      //   const vastus = tagasisideAndjad.map(element => "EST-" + element);
+      //   uuendaTagasisideAndjad(vastus) ;
+      // }
 
       
 
@@ -47,6 +51,7 @@ function TagasisideAndjad() {
     <br /><br />
 
     <button onClick={sorteeriZA}>Sorteeri Z-A</button>
+    {/* <button onClick={insertEST}>Iga nime ette EST</button> */}
 
     <h5>Tagasiside on andnud {tagasisideAndjad.length} inimest. </h5>
     {tagasisideAndjad.map ((tagasisideAndja, index) => 
