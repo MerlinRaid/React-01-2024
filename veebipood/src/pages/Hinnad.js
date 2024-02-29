@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import hinnadFailist from "../data/hinnad.json"
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
 // Array väljakuvamine (List, Massiiv) läbi useState (.map())
@@ -11,7 +11,8 @@ import React, { useState } from 'react'
 // Kui pole ühtegi hinda, siis kuva <div>Pole ühtegi hinda nähtavl</div>
 
 function Hinnad() {
-const [hinnad, muudaHinnad]= useState([312, 1234, 56, 88, 8])
+const [hinnad, muudaHinnad]= useState(hinnadFailist)
+
 
 const sorteeriAZ =() => {
   hinnad.sort((a,b) => a.toString().localeCompare(b.toString()));
@@ -72,6 +73,11 @@ const kustutaHind = (jrknr) => {
   muudaHinnad(hinnad.slice());
 }
 
+const filtreeiPaarisarvud = () => {
+  const vastus = hinnad.filter(hind => hind % 2 === 0);
+  muudaHinnad(vastus);
+}
+
 
 
   return (
@@ -83,14 +89,17 @@ const kustutaHind = (jrknr) => {
         <br /><br />
 
         <button onClick={kustutaEsimene}>Kustuta esimene</button>
-        <button onClick={kustutaTeine}>Kustuta teine</button>
-        <button onClick={kustutaKolmas}>Kustuta kolmas</button>
-        <button onClick={kustutaNeljas}>Kustuta neljas</button>
+        <button disabled={hinnad.length < 2} onClick={kustutaTeine}>Kustuta teine</button>
+        <button disabled={hinnad.length < 3} onClick={kustutaKolmas}>Kustuta kolmas</button> 
+        {hinnad.length >= 4 && <button onClick={kustutaNeljas}>Kustuta neljas</button>}
+        {/* disablegi ei ole nupp enam aktiivne ja 4 puhul kaob nupp täitsa ära */}
         <br /><br />
         <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
         <button onClick={sorteeriZA}>Sorteeri Z-A</button>
         <button onClick={sorteeriKasvavalt}>Sorteeri Kasvavalt</button>
         <button onClick={sorteeriKahanevalt}>Sorteeri Kahanevalt</button>
+        <br /><br />
+        <button onClick={filtreeiPaarisarvud}>Jäta alles paarisarvud</button>
 
         {hinnad.map ((hind, jrknr) => 
           <div key={jrknr}>
@@ -99,6 +108,7 @@ const kustutaHind = (jrknr) => {
             <button onClick={() => lisaHind(hind)}>Lisa</button> 
           </div> )}
 
+         
         <div>Hetkel on lehel {hinnad.length} hinda. </div>
         <button onClick={() => muudaHinnad([])}>Eemalda hinnad</button>
       </div>}

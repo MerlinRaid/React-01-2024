@@ -13,6 +13,8 @@ import { useState } from 'react';
 import Tootajad from './pages/Tootajad';
 import Hinnad from './pages/Hinnad';
 import Tooted from './pages/Tooted';
+import HaldaTooted from './pages/HaldaTooted';
+import LisaHind from './pages/LisaHind';
 
 
 function App() {                        //ture või false
@@ -79,6 +81,15 @@ const heledaks = () => {
             <Link className="navlink"  to="/Tooted">
               <span>Tooted</span>
             </Link>
+
+            <Link className="navlink"  to="/Halda">
+              <span>Halda tooted</span>
+            </Link>
+
+            <Link className="navlink"  to="/Lisa-Hind">
+              <span>Lisa hind</span>
+            </Link>
+
           </div>
         <div> 
           <button onClick={tumedaks}>Tume</button>
@@ -97,6 +108,8 @@ const heledaks = () => {
         <Route path="Tootajad" element={ <Tootajad />} />
         <Route path="Hinnad" element={ <Hinnad />} />
         <Route path="Tooted" element={ <Tooted />} />
+        <Route path="Halda" element={ <HaldaTooted/>} />
+        <Route path="Lisa-Hind" element={ <LisaHind/>} />
         <Route path="*" element={ <NotFound />} />
       </Routes>
       

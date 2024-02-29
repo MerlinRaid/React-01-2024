@@ -97,6 +97,19 @@ function Tootajad() {
     uuendaTootajad(tootajad.slice());
   }
 
+  //Kodus:
+  //TÕsta töötajate lisamine uued faili, täpselt nagu LisaToode.js on eraldi
+  //1. Tegema LisTootaja.js fail
+  //2. App.js see siduma URL ja failiga
+  //3. Tegema sinna sattumiseks lingi
+  //4. Tõstma sinna oleva JavaScripti LisaTood.js faili( useRef improt ka)
+  //5. Import TootajadJSON faili
+  //6. Asenda kuhu juurde lisad, nüüd lisad faili. 
+  //7. Kustutan ära HTML'i uuenduse(muuda/uuenda algusega..)
+  //8. Tõstma sinna oleva HTML'i LisaTootaja.js faili
+  //9. LISAKS: Tee krontrollid(väikse tähega ei saa, tühjaks ei saa jätta, vähemalt 3 tähemärki)
+  // 10. Sama asi Esindused.js osas
+  //Tehtud sama asi Tooted ja Hinnad
   return (
     <div>
 

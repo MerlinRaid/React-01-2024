@@ -25,6 +25,7 @@ function Seaded() { // kui localStorage-s sellist võtit ei ole, tuleb väärtus
     } else {
       muudaEmail(emailRef.current.value);
       toast.success("E-mail uuendatud!");
+      emailRef.current.value = "";
     }
     
   }
@@ -49,6 +50,7 @@ function Seaded() { // kui localStorage-s sellist võtit ei ole, tuleb väärtus
 
     muudaAadress(aadressRef.current.value);
     toast.success("Aadress uuendatud!");
+    aadressRef.current.value = "";
     
   }
 
@@ -58,6 +60,7 @@ function Seaded() { // kui localStorage-s sellist võtit ei ole, tuleb väärtus
     } else {
       muudaTelefon(telefonRef.current.value);
       toast.success("Telefon uuendatud!");
+      telefonRef.current.value = ""; 
     }
    
   }

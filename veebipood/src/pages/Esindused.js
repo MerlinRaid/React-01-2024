@@ -7,7 +7,7 @@ function Esindused() {
   // paremal pool ( []sees) on muutja, tema abil muudan muutujat
   const[linn, uuendaLinn] = useState("Pärnu");
   
-  const [keskused, uuendaKeskused] = useState(["Ülemist", "Viimsi", "Rocca al Mare" , "Magistrali", "Kristiine", "Järveotsa"]);
+  const [keskused, uuendaKeskused] = useState(["Ülemiste", "Viimsi", "Rocca al Mare" , "Magistrali", "Kristiine", "Järveotsa"]);
   const nimiRef = useRef();
 
 
@@ -16,12 +16,12 @@ const sorteeriAZ = () => {
   uuendaKeskused(keskused.slice());
 }
 
-const kustutaTallinnaEsindus =(index) => {
+const kustutaTallinnaEsindus = (index) => {
   keskused.splice(index, 1);
   uuendaKeskused(keskused.slice());
  }
  
- const lisaTallinnaEsindus= (uusKeskus) => {
+ const lisaTallinnaEsindus = (uusKeskus) => {
    keskused.push(uusKeskus);
    uuendaKeskused(keskused.slice());
  }

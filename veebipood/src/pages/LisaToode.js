@@ -1,5 +1,6 @@
 import { useRef, useState } from "react"
 import { ToastContainer, toast } from 'react-toastify';
+import tootedFailist from "../data/tooted.json";
 
 function LisaToode() {
   const[sonum, muudaSonum] = useState ("");
@@ -16,6 +17,10 @@ function LisaToode() {
     } else {
       //muudaSonum("Toode lisatud: " + inputiLuger.current.value);
       toast.success("Toode lisatud: " + inputiLuger.current.value);
+      tootedFailist.push(inputiLuger.current.value);
+      inputiLuger.current.value = ""; // nii kui pushin ehk lisan faili kõige lõppu juurde, siis tühjeneb lisamis kast
+      //ma ei pane useState funktsiooni väljakutset
+      // muuda/uuendaToode vms sp, et ei uuenda HTML'i
     }   
 }
 
