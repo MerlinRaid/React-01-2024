@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import tootajadJSON from "../data/tootajad.json";
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
@@ -76,12 +76,9 @@ function Tootajad() {
   }
 
 
-  const nimiRef = useRef();
+ 
 
-  const lisa = () => {
-    tootajad.push(nimiRef.current.value);
-    uuendaTootajad(tootajad.slice());
-  }
+  
 
   // Töötajate.js vaates kodus:
   // 1. Kustumaine
@@ -102,7 +99,7 @@ function Tootajad() {
   //1. Tegema LisTootaja.js fail
   //2. App.js see siduma URL ja failiga
   //3. Tegema sinna sattumiseks lingi
-  //4. Tõstma sinna oleva JavaScripti LisaTood.js faili( useRef improt ka)
+  //4. Tõstma sinna oleva JavaScripti LisaToode.js faili( useRef improt ka)
   //5. Import TootajadJSON faili
   //6. Asenda kuhu juurde lisad, nüüd lisad faili. 
   //7. Kustutan ära HTML'i uuenduse(muuda/uuenda algusega..)
@@ -142,9 +139,7 @@ function Tootajad() {
         <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
       </div>}
 
-      <label>Uue töötaja nimi</label> <br />
-      <input ref={nimiRef} type="text" /> <br />
-      <button onClick={lisa}>Lisa</button><br />
+      
 
 
       {tootajad.length === 0 &&  <div>Ühtegi töötajat pole nähtav!</div>}

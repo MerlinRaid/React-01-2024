@@ -15,6 +15,8 @@ import Hinnad from './pages/Hinnad';
 import Tooted from './pages/Tooted';
 import HaldaTooted from './pages/HaldaTooted';
 import LisaHind from './pages/LisaHind';
+import LisaTootaja from './pages/LisaTootaja';
+import LisaEsindus from './pages/LisaEsindus';
 
 
 function App() {                        //ture või false
@@ -90,6 +92,15 @@ const heledaks = () => {
               <span>Lisa hind</span>
             </Link>
 
+            <Link className="navlink"  to="/Lisa-Tootaja">
+              <span>Lisa Tootaja</span>
+            </Link>
+
+            <Link className="navlink"  to="/Lisa-Esindus">
+              <span>Lisa Esindus</span>
+            </Link>
+
+
           </div>
         <div> 
           <button onClick={tumedaks}>Tume</button>
@@ -110,6 +121,8 @@ const heledaks = () => {
         <Route path="Tooted" element={ <Tooted />} />
         <Route path="Halda" element={ <HaldaTooted/>} />
         <Route path="Lisa-Hind" element={ <LisaHind/>} />
+        <Route path="Lisa-Tootaja" element={ <LisaTootaja/>} />
+        <Route path="Lisa-Esindus" element={ <LisaEsindus/>} />
         <Route path="*" element={ <NotFound />} />
       </Routes>
       
