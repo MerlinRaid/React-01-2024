@@ -45,7 +45,7 @@ const kontrolli = () => {
         siis tehakse funktsioonis event.preventDefault */}
           
           <label>Toote nimetus:</label>
-          <input on onChange={kontrolli} type="text" ref={inputiLuger} /><br /><br />
+          <input onChange={kontrolli} type="text" ref={inputiLuger} /><br /><br />
 
           <label htmlFor="lname">Last name:</label>
           <input type="text" id="lname" name="lname" /><br /><br />

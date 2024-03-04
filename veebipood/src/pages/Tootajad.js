@@ -75,7 +75,11 @@ function Tootajad() {
     uuendaTootajad(vastus);
   }
 
-
+  const liidaTahed = () => {
+    let summa = 0;
+    tootajad.forEach(tootaja => summa += tootaja.length)
+    return summa;
+  }
  
 
   
@@ -84,15 +88,7 @@ function Tootajad() {
   // 1. Kustumaine
   // 2. Igaühe lõppu lisamise võimekus
 
-  const kustutaTootaja =(index) => {
-    tootajad.splice(index, 1);
-    uuendaTootajad(tootajad.slice());
-   }
 
-   const lisaTootaja = (uusTootaja) => {
-    tootajad.push(uusTootaja);
-    uuendaTootajad(tootajad.slice());
-  }
 
   //Kodus:
   //TÕsta töötajate lisamine uued faili, täpselt nagu LisaToode.js on eraldi
@@ -109,7 +105,8 @@ function Tootajad() {
   //Tehtud sama asi Tooted ja Hinnad
   return (
     <div>
-
+      <div>Töötajate tähtede arv: {liidaTahed()} </div>
+      <br />
       <button onClick={originaal}>Tagasi originaali</button>
       <br /> <br />
 
@@ -130,13 +127,13 @@ function Tootajad() {
         <button onClick={filtreeriLyhendigaAi}>Filtreeri kellel on see lühend 'ai'</button>
 
 
-        {tootajad.map((tootaja, index) => <div>{tootaja}
-          <button onClick={() => kustutaTootaja(index)}>Kustuta</button> 
-          <button onClick={() => lisaTootaja(tootaja)}>Lisa lõppu juurde</button>
+        {tootajad.map((tootaja, index) => 
+          <div key={index}>
+            {tootaja}
           </div> )}
 
         <div>Hetke on {tootajad.length} töötajat. </div>
-        <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
+        <button onClick={ () => uuendaTootajad ([])} >Ajutiselt peida töötajad</button> 
       </div>}
 
       

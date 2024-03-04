@@ -17,6 +17,10 @@ import HaldaTooted from './pages/HaldaTooted';
 import LisaHind from './pages/LisaHind';
 import LisaTootaja from './pages/LisaTootaja';
 import LisaEsindus from './pages/LisaEsindus';
+import HaldaTootajad from './pages/HaldaTootajad';
+import HaldaEsindused from './pages/HaldaEsindused';
+import HaldaHindu from './pages/HaldaHindu';
+import YksToode from './pages/YksToode';
 
 
 function App() {                        //ture või false
@@ -84,7 +88,7 @@ const heledaks = () => {
               <span>Tooted</span>
             </Link>
 
-            <Link className="navlink"  to="/Halda">
+            <Link className="navlink"  to="/Haldatooted">
               <span>Halda tooted</span>
             </Link>
 
@@ -96,10 +100,23 @@ const heledaks = () => {
               <span>Lisa Tootaja</span>
             </Link>
 
-            <Link className="navlink"  to="/Lisa-Esindus">
-              <span>Lisa Esindus</span>
+            <Link className="navlink"  to="/HaldaTootajad">
+              <span>Halda Töötajaid</span>
             </Link>
 
+            
+            <Link className="navlink"  to="/HaldaEsindused">
+              <span>Halda Esindusi</span>
+            </Link>
+
+            
+            <Link className="navlink"  to="/HaldaHindu">
+              <span>Halda Hindu</span>
+            </Link>
+
+           
+
+    
 
           </div>
         <div> 
@@ -119,10 +136,15 @@ const heledaks = () => {
         <Route path="Tootajad" element={ <Tootajad />} />
         <Route path="Hinnad" element={ <Hinnad />} />
         <Route path="Tooted" element={ <Tooted />} />
-        <Route path="Halda" element={ <HaldaTooted/>} />
+        <Route path="HaldaTooted" element={ <HaldaTooted/>} />
         <Route path="Lisa-Hind" element={ <LisaHind/>} />
         <Route path="Lisa-Tootaja" element={ <LisaTootaja/>} />
         <Route path="Lisa-Esindus" element={ <LisaEsindus/>} />
+        <Route path="HaldaTootajad" element={ <HaldaTootajad/>} />
+        <Route path="HaldaEsindused" element={ <HaldaEsindused/>} />
+        <Route path="HaldaHindu" element={ <HaldaHindu/>} />
+        <Route path="Toode/:index" element={ <YksToode/>} />
+        
         <Route path="*" element={ <NotFound />} />
       </Routes>
       

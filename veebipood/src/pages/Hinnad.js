@@ -37,40 +37,40 @@ const sorteeriKahanevalt = () => {
 }
 
 const lisaHind123= () => {
-  hinnad.push(123);
-  muudaHinnad(hinnad.slice())
+  hinnadFailist.push(123);
+  muudaHinnad(hinnadFailist.slice())
 }
 
 const lisaHind= (lisatavHind) => {
-  hinnad.push(lisatavHind);
-  muudaHinnad(hinnad.slice())
+  hinnadFailist.push(lisatavHind);
+  muudaHinnad(hinnadFailist.slice())
 }
 
 
 const kustutaEsimene = () => {
-  hinnad.splice(0, 1); // esimene on jrk number, teine mitu tk tahan ühe vajutusega kustutada
-  muudaHinnad(hinnad.slice());
+  hinnadFailist.splice(0, 1); // esimene on jrk number, teine mitu tk tahan ühe vajutusega kustutada
+  muudaHinnad(hinnadFailist.slice());
 }
 
 const kustutaTeine= () => {
-  hinnad.splice(1, 1); 
-  muudaHinnad(hinnad.slice());
+  hinnadFailist.splice(1, 1); 
+  muudaHinnad(hinnadFailist.slice());
 }
 
 const kustutaKolmas = () => {
-  hinnad.splice(2, 1); 
-  muudaHinnad(hinnad.slice());
+  hinnadFailist.splice(2, 1); 
+  muudaHinnad(hinnadFailist.slice());
 }
 
 const kustutaNeljas = () => {
-  hinnad.splice(3, 1); 
-  muudaHinnad(hinnad.slice());
+  hinnadFailist.splice(3, 1); 
+  muudaHinnad(hinnadFailist.slice());
 }
 
 //kui siin on sulgude sisu täidetud, siis tuleb midagi onClick seest kaasa saata
 const kustutaHind = (jrknr) => {
-  hinnad.splice(jrknr, 1); 
-  muudaHinnad(hinnad.slice());
+  hinnadFailist.splice(jrknr, 1); 
+  muudaHinnad(hinnadFailist.slice());
 }
 
 const filtreeiPaarisarvud = () => {
@@ -78,7 +78,45 @@ const filtreeiPaarisarvud = () => {
   muudaHinnad(vastus);
 }
 
+const hinnadKokku = () => {
+  let summa = 0;
+  // summa = summa + 312;
+  // summa = summa + 1234;
+  // summa = summa + 56;
+  // summa = summa + 88;
+  // summa = summa + 8;
+      //sama:
+  // summa += 312;
+  // summa += 1234;
+  // summa += 56;
+  // summa += 88;
+  // summa +=  8;
 
+  hinnad.forEach(hind => summa = summa + hind )
+  return summa;
+}
+
+// .map(hind => MILLEGA_ASENDATAKSE)
+  // .sort((a,b) => PLUSS_VÕI_MIINUS) -> plussiga muudetakse järjekord
+  // .filter(hind => ÕIGE_VÕI_VÄÄR) -> õigega jäetakse alles
+  // .forEach(hind => summa = summa + hind) -> igaühe kohta tehakse midagi
+
+
+
+// Veebilehel veateate tähendus:
+// Too many re-renders. React limits the number of renders to prevent an infinite loop.
+// render ---> tähendab useState-i parempoolse funktsiooni käivitamine ehk HTMLi uuendus
+// render ---> HTMLi uuendus
+
+// onClick={() => sorteeriAZ()} --> ÕIGE.
+  // onClick={sorteeriAZ} --> ÕIGE.
+  // onClick={sorteeriAZ()} --> VALE. Jääb lõputu loop (tsükkel), sest sorteeriAZ funktsiooni sees
+  //      on useState-i parempoolne funktsioon, mis läheb HTMLi uuendama. Ja kui seda tehakse,
+  //      siis pannakse uuesti see funktsioon käima, mis läheb omakorda uuesti HTMLi uuendama
+
+// <div>Kokkuarvutus, mis tagastab numbri: {hinnadKokku()}</div> --> ÕIGE.
+  // <div>Kokkuarvutus, mis tagastab numbri: {hinnadKokku}</div> --> VALE. Sest ei käivitu
+  // <div>Kokkuarvutus, mis tagastab numbri: {() => hinnadKokku()}</div> --> VALE. Sest ei käivitu
 
   return (
     <div>
@@ -101,6 +139,9 @@ const filtreeiPaarisarvud = () => {
         <br /><br />
         <button onClick={filtreeiPaarisarvud}>Jäta alles paarisarvud</button>
 
+
+        <h4>Hetkel on lehel {hinnad.length} hinda. </h4>
+
         {hinnad.map ((hind, jrknr) => 
           <div key={jrknr}>
             {hind} 
@@ -109,7 +150,8 @@ const filtreeiPaarisarvud = () => {
           </div> )}
 
          
-        <div>Hetkel on lehel {hinnad.length} hinda. </div>
+        <div>Kogu summa on: {hinnadKokku()} </div>
+        
         <button onClick={() => muudaHinnad([])}>Eemalda hinnad</button>
       </div>}
 

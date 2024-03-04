@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
-import tootedFailist from "../data/tooted.json"
+import React, { useState } from 'react';
+import tootedFailist from "../data/tooted.json";
+import {Link} from 'react-router-dom';  // Link on URLiga seonduv ja kõik URLga seonduvad
+//  tulevad react-router-dom'st   (Route, Routes, BrowserRouter)
+
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
 // Array väljakuvamine (List, Massiiv) läbi useState (.map())
@@ -22,7 +25,16 @@ const sorteeriAZ = () => {
   return (
     <div>
       <button onClick={sorteeriAZ} >Sorteeria A-Z</button>
-      {tooted.map(toode => <div>{toode}</div> )}
+      {tooted.map((toode, i) => 
+      <div key={i}>
+        {toode}
+
+         {/* vasakul pool kaldkriips - muidu liidab olemasolevale URL'ile ja
+        paremal pool kaldkriips- muidu nuber tuleb URL'ui eelmise sõna otsa!!!  */}
+        <Link to={"/Toode/" + i}>
+          <button>Vaata lähemalt</button>
+        </Link>
+      </div> )}
       <div>Hetkel on {tooted.length} toodet. </div>
     </div>
   )

@@ -33,12 +33,12 @@ const lisaOstukorvi = (uusToode) => {
       </div>}
 
         {ostukorv.map((toode, index) => 
-        <div>
-          {index}.
-          {toode} 
-          <button onClick={() => kustutaOstukorvist(index)}>Kustuta</button> 
-          <button onClick={() => lisaOstukorvi(toode)}>Lisa lõppu üks juurde</button> 
-        </div> )}
+          <div key={index}>
+            {index}.
+            {toode} 
+            <button onClick={() => kustutaOstukorvist(index)}>Kustuta</button> 
+            <button onClick={() => lisaOstukorvi(toode)}>Lisa lõppu üks juurde</button> 
+          </div> )}
 
        <Link to="/Avaleht">Avaleht</Link>
         {ostukorv.length === 0 && <img src="tuhi.png" className="ostukorvi-pilt" alt="" />}
