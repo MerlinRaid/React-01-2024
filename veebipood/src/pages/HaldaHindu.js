@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
+import hinnadFailist from "../data/hinnad.json"
 
 function HaldaHindu() {
+  const [hinnad, muudaHinnad]= useState(hinnadFailist)
+
+
+  //kui siin on sulgude sisu täidetud, siis tuleb midagi onClick seest kaasa saata
+const kustutaHind = (jrknr) => {
+  hinnadFailist.splice(jrknr, 1); 
+  muudaHinnad(hinnadFailist.slice());
+}
+
+const lisaHind= (lisatavHind) => {
+  hinnadFailist.push(lisatavHind);
+  muudaHinnad(hinnadFailist.slice())
+}
+
   return (
-    <div>HaldaHindu</div>
+    <div>
+       {hinnad.map ((hind, jrknr) => 
+          <div key={jrknr}>
+            {hind} 
+            <button onClick={() => kustutaHind(jrknr)}>X</button> 
+            <button onClick={() => lisaHind(hind)}>Lisa</button> 
+          </div> )}
+    </div>
   )
 }
 

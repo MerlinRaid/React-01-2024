@@ -41,12 +41,6 @@ const lisaHind123= () => {
   muudaHinnad(hinnadFailist.slice())
 }
 
-const lisaHind= (lisatavHind) => {
-  hinnadFailist.push(lisatavHind);
-  muudaHinnad(hinnadFailist.slice())
-}
-
-
 const kustutaEsimene = () => {
   hinnadFailist.splice(0, 1); // esimene on jrk number, teine mitu tk tahan ühe vajutusega kustutada
   muudaHinnad(hinnadFailist.slice());
@@ -67,11 +61,7 @@ const kustutaNeljas = () => {
   muudaHinnad(hinnadFailist.slice());
 }
 
-//kui siin on sulgude sisu täidetud, siis tuleb midagi onClick seest kaasa saata
-const kustutaHind = (jrknr) => {
-  hinnadFailist.splice(jrknr, 1); 
-  muudaHinnad(hinnadFailist.slice());
-}
+
 
 const filtreeiPaarisarvud = () => {
   const vastus = hinnad.filter(hind => hind % 2 === 0);
@@ -145,8 +135,6 @@ const hinnadKokku = () => {
         {hinnad.map ((hind, jrknr) => 
           <div key={jrknr}>
             {hind} 
-            <button onClick={() => kustutaHind(jrknr)}>X</button> 
-            <button onClick={() => lisaHind(hind)}>Lisa</button> 
           </div> )}
 
          

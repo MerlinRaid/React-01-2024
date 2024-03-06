@@ -66,7 +66,7 @@ function Tootajad() {
   }
 
   const filtreeri3sTaht =() => {
-    const vastus = tootajad.filter(e => e[2 === "i"]);
+    const vastus = tootajad.filter(e => e[2] === "i");
     uuendaTootajad(vastus);
   }
 

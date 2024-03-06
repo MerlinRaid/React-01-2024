@@ -22,9 +22,28 @@ const sorteeriAZ = () => {
   tooted.sort()
   uuendaTooted(tooted.slice())
 }
+
+const sorteeriZA= () => {
+  tooted.sort((a,b) => b.localeCompare(a));
+  uuendaTooted(tooted.slice());
+}
+
+const sorteeriTahedKasvavalt= () => {
+  tooted.sort((a, b) => a.length - b.length);
+  uuendaTooted(tooted.slice());
+}
+const sorteeriTahedKahanevalt= () => {
+  tooted.sort((a, b) => b.length - a.length);
+  uuendaTooted(tooted.slice());
+}
+
+
   return (
     <div>
       <button onClick={sorteeriAZ} >Sorteeria A-Z</button>
+      <button onClick={sorteeriZA}>Sorteeri Z-A</button>
+      <button onClick={sorteeriTahedKasvavalt}>Sorteeri Tähed Kasvavalt</button>
+        <button onClick={sorteeriTahedKahanevalt}>Sorteeri tähed Kahanevalt</button>
       {tooted.map((toode, i) => 
       <div key={i}>
         {toode}

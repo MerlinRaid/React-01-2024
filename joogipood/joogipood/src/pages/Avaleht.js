@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {Link} from 'react-router-dom'; 
+import joogidFailist from "../joogid.json"
 
 function Avaleht() {
+  const [joogid, uuendaJoogid] = useState(joogidFailist)
   return (
-    <div>Avaleht</div>
+    <div>
+      {joogid.map((jook, index) => 
+        <div>
+           <Link to={"/Jook/" + index}>
+            <button>{jook}</button>
+          </Link>
+        </div> )}
+      
+
+    </div>
   )
 }
 
