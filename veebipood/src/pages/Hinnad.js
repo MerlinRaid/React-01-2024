@@ -62,7 +62,6 @@ const kustutaNeljas = () => {
 }
 
 
-
 const filtreeiPaarisarvud = () => {
   const vastus = hinnad.filter(hind => hind % 2 === 0);
   muudaHinnad(vastus);

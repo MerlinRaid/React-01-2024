@@ -13,7 +13,7 @@ function Esindused() {
 
 
 const sorteeriAZ = () => {
-  keskused.sort((a,b) => a.localeCompare(b));
+  keskused.sort((a,b) => a.localeCompare(b));  // kui ei toimi, siis ,"et" juurde, et tuleks õiges tähestikus ((a,b) => a.localeCompare(b, "et"))
   uuendaKeskused(keskused.slice());
 }
 

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom'; 
-import joogidFailist from "../joogid.json"
+import joogidFailist from "../joogid.json";
 
 function Avaleht() {
-  const [joogid, uuendaJoogid] = useState(joogidFailist)
+  const [ joogid ] = useState(joogidFailist);
   return (
     <div>
       {joogid.map((jook, index) => 

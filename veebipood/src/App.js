@@ -21,6 +21,13 @@ import HaldaTootajad from './pages/HaldaTootajad';
 import HaldaEsindused from './pages/HaldaEsindused';
 import HaldaHindu from './pages/HaldaHindu';
 import YksToode from './pages/YksToode';
+import YksEsindus from './pages/YksEsindus';
+import YksTootaja from './pages/YksTootaja';
+import YksHind from './pages/YksHind';
+import MuudaEsindus from './pages/MuudaEsindus';
+import MuudaTootaja from './pages/MuudaTootaja';
+import MuudaHind from './pages/MuudaHind';
+import MuudaToode from './pages/MuudaToode';
 
 
 function App() {                        //ture või false
@@ -144,6 +151,14 @@ const heledaks = () => {
         <Route path="HaldaEsindused" element={ <HaldaEsindused/>} />
         <Route path="HaldaHindu" element={ <HaldaHindu/>} />
         <Route path="Toode/:index" element={ <YksToode/>} />
+        <Route path="Esindus/:index" element={ <YksEsindus/>} />
+        <Route path="Tootaja/:index" element={ <YksTootaja/>} />
+        <Route path="Hind/:index" element={ <YksHind/>} />
+        <Route path="Muuda-Esindus/:index" element={ <MuudaEsindus/>} />
+        <Route path="Muuda-Tootaja/:index" element={ <MuudaTootaja/>} />
+        <Route path="Muuda-Hind/:index" element={ <MuudaHind/>} />
+        <Route path="Muuda-Toode/:index" element={ <MuudaToode/>} />
+        
         
         <Route path="*" element={ <NotFound />} />
       </Routes>

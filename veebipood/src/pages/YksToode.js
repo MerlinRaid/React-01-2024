@@ -3,7 +3,7 @@ import tootedFailist from "../data/tooted.json";
 import { useParams } from 'react-router-dom';
 
 function YksToode() {
-  const{ index } = useParams()
+  const{ index } = useParams();
   const leitud = tootedFailist[index];
 
   if (leitud === undefined) {
