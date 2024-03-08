@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import esindusedFailist from "../data/esindused.json"
+import esindusedFailist from "../data/esindused.json";
+import {Link} from 'react-router-dom'; 
 
 // KOJU:
 // Kustutada ei saa enam vaatamise lehel. Esindused.js
@@ -28,6 +29,9 @@ function HaldaEsindused() {
           {keskus}
           <button onClick={() => kustutaTallinnaEsindus(index)}>Kustuta</button>  
           <button onClick={() => lisaTallinnaEsindus(keskus)}>Lisa lõppu üks juurde</button> 
+          <Link to={"/Muuda-Esindus/" +index}>
+            <button>Muuda</button>
+          </Link>
         </div>)}
     </div>
   )

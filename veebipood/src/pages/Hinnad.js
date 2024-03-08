@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import hinnadFailist from "../data/hinnad.json"
+import { Link } from 'react-router-dom';
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
 // Array väljakuvamine (List, Massiiv) läbi useState (.map())
@@ -134,6 +135,9 @@ const hinnadKokku = () => {
         {hinnad.map ((hind, jrknr) => 
           <div key={jrknr}>
             {hind} 
+            <Link to={"/Hind/" +jrknr}>
+              <button>Vaata lähemalt</button>
+            </Link>
           </div> )}
 
          

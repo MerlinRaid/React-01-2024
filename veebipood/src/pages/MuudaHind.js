@@ -8,6 +8,11 @@ function MuudaHind() {
   const hind = hinnadFailist[index];
   const hindRef = useRef();
 
+  if( hind === undefined) {
+    return <div>Hinda ei leitud</div>
+  }
+
+
   const muuda = () => {
     hinnadFailist[index] = Number(hindRef.current.value);
   }

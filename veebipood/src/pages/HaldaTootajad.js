@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import tootajadJSON from "../data/tootajad.json";
+import { Link } from 'react-router-dom';
 
 
 
@@ -25,6 +26,9 @@ function HaldaTootajad() {
             {tootaja}
             <button onClick={() => kustutaTootaja(index)}>Kustuta</button> 
             <button onClick={() => lisaTootaja(tootaja)}>Lisa lõppu juurde</button>
+            <Link to={"/Muuda-Tootaja/" +index}>
+              <button>Muuda</button>
+            </Link>
         </div> )}
     </div>
   )

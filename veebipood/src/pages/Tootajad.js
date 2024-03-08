@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import tootajadJSON from "../data/tootajad.json";
+import { Link } from 'react-router-dom';
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
@@ -130,6 +131,9 @@ function Tootajad() {
         {tootajad.map((tootaja, index) => 
           <div key={index}>
             {tootaja}
+            <Link to={"/Tootaja/" + index}>
+              <button>Vaata lähemalt</button>
+            </Link>
           </div> )}
 
         <div>Hetke on {tootajad.length} töötajat. </div>

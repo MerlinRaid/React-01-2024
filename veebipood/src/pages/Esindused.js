@@ -1,5 +1,6 @@
 import { useState } from "react"
 import esindusedFailist from "../data/esindused.json"
+import { Link } from "react-router-dom";
 
 
 function Esindused() {
@@ -101,6 +102,9 @@ const filtreeriNeljasTahtI = () => {
       {keskused.map((keskus,index)  => 
         <div key={index}>
           {keskus}
+          <Link to={"/Esindus/" +index}>
+            <button>Vaata lähemalt</button>
+          </Link>
         </div>)}
 
       
