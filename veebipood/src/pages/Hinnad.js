@@ -16,24 +16,24 @@ const [hinnad, muudaHinnad]= useState(hinnadFailist)
 
 
 const sorteeriAZ =() => {
-  hinnad.sort((a,b) => a.toString().localeCompare(b.toString()));
+  hinnad.sort((a,b) => a.number.toString().localeCompare(b.number.toString()));
   //hinnad.sort();  //a.toString, et number muutuks sõnaks, et saaks kasutada localeCompare, seda muid saab kasutada ainult sõnadega. 
   muudaHinnad(hinnad.slice());
 }
 
 const sorteeriZA =() => {
-  hinnad.sort((a,b) => b.toString().localeCompare(a.toString()));
+  hinnad.sort((a,b) => b.number.toString().localeCompare(a.number.toString()));
   //hinnad.reverse();
   muudaHinnad(hinnad.slice());
 }
 
 const sorteeriKasvavalt = () => {
-  hinnad.sort((a, b) => a - b);
+  hinnad.sort((a, b) => a.number - b.number);
   muudaHinnad(hinnad.slice());
 }
 
 const sorteeriKahanevalt = () => {
-  hinnad.sort((a, b) => b - a);
+  hinnad.sort((a, b) => b.number - a.number);
   muudaHinnad(hinnad.slice());
 }
 
@@ -64,7 +64,7 @@ const kustutaNeljas = () => {
 
 
 const filtreeiPaarisarvud = () => {
-  const vastus = hinnad.filter(hind => hind % 2 === 0);
+  const vastus = hinnad.filter(hind => hind.number % 2 === 0);
   muudaHinnad(vastus);
 }
 
@@ -82,7 +82,7 @@ const hinnadKokku = () => {
   // summa += 88;
   // summa +=  8;
 
-  hinnad.forEach(hind => summa = summa + hind )
+  hinnad.forEach(hind => summa = summa + hind.number )
   return summa;
 }
 
@@ -134,7 +134,7 @@ const hinnadKokku = () => {
 
         {hinnad.map ((hind, jrknr) => 
           <div key={jrknr}>
-            {hind} 
+            {hind.number}  ({hind.lisaja}) 
             <Link to={"/Hind/" +jrknr}>
               <button>Vaata lähemalt</button>
             </Link>

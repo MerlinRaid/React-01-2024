@@ -12,7 +12,10 @@ function YksHind() {
 
   return (
     <div>
-      <h2>{hind}</h2>
+      <h2>{hind.number}</h2>
+      <h3>{hind.lisaja}</h3>
+      
+
 
     </div>
   )

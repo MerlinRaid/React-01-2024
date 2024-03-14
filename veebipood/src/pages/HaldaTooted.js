@@ -14,7 +14,8 @@ function HaldaTooted() {
     <div>
         {tooted.map((toode, indeks) =>  
             <div key={indeks}>
-              {toode}
+              <img style={{width: "50px"}} src={toode.pilt} alt="" />
+              {toode.nimi} - {toode.hind} €
               <button onClick={() => kustuta(indeks)}>Kustuta</button>
               <Link to={"/Muuda-Toode/" + indeks}>
                  <button>Muuda</button>

@@ -1,1 +1,8 @@
-[312, 1234, 56, 88, 8]
+[{"number": 312, "lisaja": "Merlin"}, 
+{"number": 1234, "lisaja": "Merlin"},
+{"number": 56, "lisaja": "Merlin"},
+{"number": 88, "lisaja": "Merlin"},
+{"number": 8, "lisaja": "Merlin"},
+{"number": 234, "lisaja": "Merlin"},
+{"number": 12, "lisaja": "Merlin"}
+]

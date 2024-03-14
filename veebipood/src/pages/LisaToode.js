@@ -5,7 +5,10 @@ import tootedFailist from "../data/tooted.json";
 function LisaToode() {
   const[sonum, muudaSonum] = useState ("");
   const inputiLuger = useRef (); // inputi seest kasutaja sisestuse lugemiseks
-
+  const hindRef = useRef ();
+  const piltRef = useRef ();
+  const aktiivsusRef = useRef ();
+  
  //function lis (){} samas mis const lisa
 
   const lisa = () => {
@@ -17,7 +20,13 @@ function LisaToode() {
     } else {
       //muudaSonum("Toode lisatud: " + inputiLuger.current.value);
       toast.success("Toode lisatud: " + inputiLuger.current.value);
-      tootedFailist.push(inputiLuger.current.value);
+      tootedFailist.push({ 
+        "nimi": inputiLuger.current.value,
+        "hind": Number(hindRef.current.value), 
+        "aktiivne": aktiivsusRef.current.checked, 
+        "pilt": piltRef.current.value
+      }
+    );
       inputiLuger.current.value = ""; // nii kui pushin ehk lisan faili kõige lõppu juurde, siis tühjeneb lisamis kast
       //ma ei pane useState funktsiooni väljakutset
       // muuda/uuendaToode vms sp, et ei uuenda HTML'i
@@ -47,8 +56,16 @@ const kontrolli = () => {
           <label>Toote nimetus:</label>
           <input onChange={kontrolli} type="text" ref={inputiLuger} /><br /><br />
 
-          <label htmlFor="lname">Last name:</label>
-          <input type="text" id="lname" name="lname" /><br /><br />
+          <label>Toote hind:</label>
+          <input  type="number" ref={hindRef} /><br /><br />
+
+          <label>Toote pilt:</label>
+          <input  type="text" ref={piltRef} /><br /><br />
+
+          <label>Toote aktiivsus:</label>
+          <input  type="checkbox" ref={aktiivsusRef} /><br /><br />
+
+
           {/* <input type="submit" value="Submit" /> */}
 
           <button disabled={sonum !== ""} onClick={lisa}>Sisesta</button>

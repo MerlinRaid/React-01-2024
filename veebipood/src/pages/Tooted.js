@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import tootedFailist from "../data/tooted.json";
+import ostukorvFailist from "../data/okstukorv.json"
 import {Link} from 'react-router-dom';  // Link on URLiga seonduv ja kõik URLga seonduvad
 //  tulevad react-router-dom'st   (Route, Routes, BrowserRouter)
 
@@ -19,22 +20,26 @@ const[tooted, uuendaTooted] = useState(tootedFailist);
 //Tähtede arv kahanevalt
 
 const sorteeriAZ = () => {
-  tooted.sort()
+  tooted.sort((a,b) => a.nimi.localeCompare(b.nimi))
   uuendaTooted(tooted.slice())
 }
 
 const sorteeriZA= () => {
-  tooted.sort((a,b) => b.localeCompare(a));
+  tooted.sort((a,b) => b.nimi.localeCompare(a.nimi));
   uuendaTooted(tooted.slice());
 }
 
 const sorteeriTahedKasvavalt= () => {
-  tooted.sort((a, b) => a.length - b.length);
+  tooted.sort((a, b) => a.nimi.length - b.nimi.length);
   uuendaTooted(tooted.slice());
 }
 const sorteeriTahedKahanevalt= () => {
-  tooted.sort((a, b) => b.length - a.length);
+  tooted.sort((a, b) => b.nimi.length - a.nimi.length);
   uuendaTooted(tooted.slice());
+}
+
+const lisaOstukorvi = (toode) => {
+  ostukorvFailist.push(toode);
 }
 
 
@@ -46,13 +51,16 @@ const sorteeriTahedKahanevalt= () => {
         <button onClick={sorteeriTahedKahanevalt}>Sorteeri tähed Kahanevalt</button>
       {tooted.map((toode, i) => 
       <div key={i}>
-        {toode}
+        <img className="pilt" src={toode.pilt} alt="" />
+        <div>{toode.nimi}</div>
+        <div>{toode.hind} €</div>
 
          {/* vasakul pool kaldkriips - muidu liidab olemasolevale URL'ile ja
         paremal pool kaldkriips- muidu nuber tuleb URL'ui eelmise sõna otsa!!!  */}
         <Link to={"/Toode/" + i}>
           <button>Vaata lähemalt</button>
         </Link>
+        <button onClick={() => lisaOstukorvi(toode)}>Lisa ostukorvi</button>
       </div> )}
       <div>Hetkel on {tooted.length} toodet. </div>
     </div>

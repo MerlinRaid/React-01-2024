@@ -15,8 +15,11 @@ function LisaHind() {
         toast.error("Hind ei saa alata nulliga!")
         return;
        }
-                                    // "500" ---> 500
-       hinnadFailist.push(Number(hindRef.current.value)); //"500" ehk tuleb jutumärkides ehk tuleb alati sõnana, peame konvertima numbriks
+                                                 // "500" ---> 500
+       hinnadFailist.push({
+        "number": Number(hindRef.current.value),//"500" ehk tuleb jutumärkides ehk tuleb alati sõnana, peame konvertima numbriks
+        "lisaja": "Merlin"
+      });
        toast.success("Hind lisatud!");
        hindRef.current.value = "";
       }

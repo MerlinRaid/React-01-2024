@@ -28,6 +28,8 @@ import MuudaEsindus from './pages/MuudaEsindus';
 import MuudaTootaja from './pages/MuudaTootaja';
 import MuudaHind from './pages/MuudaHind';
 import MuudaToode from './pages/MuudaToode';
+import Menyy from './components/Menyy';
+import { ContactUs } from './pages/ContactUs';
 
 
 function App() {                        //ture või false
@@ -53,78 +55,9 @@ const heledaks = () => {
         <Link to="/avaleht">
           <img src="/logo.png" className="pilt" alt="Logo" />
         </Link>
-  {/* arendaja vaates converditakse <Link to="esindused">  :  <a href="esindused"> */}
+  
           <div>
-            <Link  className="navlink" to="/esindused">
-              <img src="/esindused.svg" alt="" />
-              <span>Esindused</span>
-            </Link>
-
-            <Link className="navlink"  to="/arikliendile">
-              <img src="/ariklient.svg" alt="" />
-              <span>Ärikliendile</span>
-            </Link>
-
-            <Link className="navlink"  to="/osta-kinkekaart">
-              <img src="/kinkekaart.svg" alt="" />
-              <span >Kinkekaart</span>
-            </Link>
-
-            <Link className="navlink"  to="/Lisa-Toode">
-              <span>Lisa Toode</span>
-            </Link>
-
-            <Link className="navlink"  to="/Ostukorv">
-            <img src="/shopping.svg" alt="" />
-              <span>Ostukorv</span>
-            </Link>
-
-            <Link className="navlink"  to="/Seaded">
-              <span>Seaded</span>
-            </Link>
-
-            <Link className="navlink"  to="/Tootajad">
-              <span>Töötajad</span>
-            </Link>
-
-            <Link className="navlink"  to="/Hinnad">
-              <span>Hinnad</span>
-            </Link>
-
-            <Link className="navlink"  to="/Tooted">
-              <span>Tooted</span>
-            </Link>
-
-            <Link className="navlink"  to="/Haldatooted">
-              <span>Halda tooted</span>
-            </Link>
-
-            <Link className="navlink"  to="/Lisa-Hind">
-              <span>Lisa hind</span>
-            </Link>
-
-            <Link className="navlink"  to="/Lisa-Tootaja">
-              <span>Lisa Tootaja</span>
-            </Link>
-
-            <Link className="navlink"  to="/HaldaTootajad">
-              <span>Halda Töötajaid</span>
-            </Link>
-
-            
-            <Link className="navlink"  to="/HaldaEsindused">
-              <span>Halda Esindusi</span>
-            </Link>
-
-            
-            <Link className="navlink"  to="/HaldaHindu">
-              <span>Halda Hindu</span>
-            </Link>
-
-           
-
-    
-
+            <Menyy />
           </div>
         <div> 
           <button onClick={tumedaks}>Tume</button>
@@ -134,6 +67,7 @@ const heledaks = () => {
 
       <Routes>
         <Route path= "avaleht" element={ <Avaleht /> } />
+        <Route path="kontakteeru" element={ <ContactUs />} />
         <Route path= "esindused" element={ <Esindused /> } />
         <Route path= "arikliendile" element={ <Ariklient /> } />
         <Route path= "osta-kinkekaart" element={ <Kinkekaart /> } />

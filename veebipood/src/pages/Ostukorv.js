@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import ostukorvFailist from "../data/okstukorv.json"
 
 function Ostukorv() {
-const [ostukorv, uuendaOstukorv] = useState(["Coca", "Fanta", "Sprite"]);
+const [ostukorv, uuendaOstukorv] = useState(ostukorvFailist);
 
 const lisaOstukorviRedBull = () => {
   ostukorv.push("Red Bull");
@@ -17,6 +18,12 @@ const kustutaOstukorvist =(index) => {
 const lisaOstukorvi = (uusToode) => {
   ostukorv.push(uusToode);
   uuendaOstukorv(ostukorv.slice());
+}
+
+const arvutaKogusumma = () => {
+  let summa = 0;
+  ostukorv.forEach(toode => summa = summa + toode.hind);
+  return summa;
 }
 
   return (
@@ -35,10 +42,13 @@ const lisaOstukorvi = (uusToode) => {
         {ostukorv.map((toode, index) => 
           <div key={index}>
             {index}.
-            {toode} 
+            <img style={{width: "50px"}} src={toode.pilt} alt="" />
+            {toode.nimi} - {toode.hind} €
             <button onClick={() => kustutaOstukorvist(index)}>Kustuta</button> 
             <button onClick={() => lisaOstukorvi(toode)}>Lisa lõppu üks juurde</button> 
           </div> )}
+
+          <div>Kogusumma: {arvutaKogusumma()}€</div>
 
        <Link to="/Avaleht">Avaleht</Link>
         {ostukorv.length === 0 && <img src="tuhi.png" className="ostukorvi-pilt" alt="" />}

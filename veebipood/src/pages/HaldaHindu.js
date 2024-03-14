@@ -21,7 +21,7 @@ const lisaHind= (lisatavHind) => {
     <div>
        {hinnad.map ((hind, jrknr) => 
           <div key={jrknr}>
-            {hind} 
+            {hind.number}  ({hind.lisaja}) 
             <button onClick={() => kustutaHind(jrknr)}>X</button> 
             <button onClick={() => lisaHind(hind)}>Lisa</button> 
             <Link to={"/Muuda-Hind/" + jrknr}>
