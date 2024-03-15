@@ -25,60 +25,60 @@ function Tootajad() {
   }
 
   const sorteeriAZ= () => {
-    tootajad.sort((a,b) => a.localeCompare(b));
+    tootajad.sort((a,b) => a.nimi.localeCompare(b.nimi));
     uuendaTootajad(tootajad.slice());
   }
 
   const sorteeriZA= () => {
-    tootajad.sort((a,b) => b.localeCompare(a));
+    tootajad.sort((a,b) => b.nimi.localeCompare(a.nimi));
     uuendaTootajad(tootajad.slice());
   }
 
   const sorteeriTahedKasvavalt= () => {
-    tootajad.sort((a, b) => a.length - b.length); //.length, et programm näeks sõna kui numbrit ja võrdleks sõna pikkust
+    tootajad.sort((a, b) => a.nimi.length - b.nimi.length); //.length, et programm näeks sõna kui numbrit ja võrdleks sõna pikkust
     uuendaTootajad(tootajad.slice());
   }
 
   const sorteeriTahedKahanevalt= () => {
-    tootajad.sort((a, b) => b.length - a.length);
+    tootajad.sort((a, b) => b.nimi.length - a.nimi.length);
     uuendaTootajad(tootajad.slice());
   }
 
   const sorteeriKolmasTahtAZ= () => {                                                                   //  12345    12345
-    tootajad.sort((a,b) => a[2].localeCompare(b[2])); //Nr. 2 näitab, et 3 täht, sest esimene täht on 0 //a:Urmet b: Kaido
+    tootajad.sort((a,b) => a.nimi[2].localeCompare(b.nimi[2])); //Nr. 2 näitab, et 3 täht, sest esimene täht on 0 //a:Urmet b: Kaido
     uuendaTootajad(tootajad.slice());
   }
 
 
 
   const filtreeriTgaLoppev =() => {
-    const vastus = tootajad.filter(t => t.endsWith("t"));
+    const vastus = tootajad.filter(t => t.nimi.endsWith("t"));
     uuendaTootajad(vastus);
   }
 
   const filtreeri5Tahelised =() => {
-    const vastus = tootajad.filter(tootaja => tootaja.length === 5); //===true võib panna, aga ei pea
+    const vastus = tootajad.filter(tootaja => tootaja.nimi.length === 5); //===true võib panna, aga ei pea
     uuendaTootajad(vastus);
   }
 
   const filtreeriVahemKui5Tahte =() => {
-    const vastus = tootajad.filter(element => element.length < 5);
+    const vastus = tootajad.filter(element => element.nimi.length < 5);
     uuendaTootajad(vastus);
   }
 
   const filtreeri3sTaht =() => {
-    const vastus = tootajad.filter(e => e[2] === "i");
+    const vastus = tootajad.filter(e => e.nimi[2] === "i");
     uuendaTootajad(vastus);
   }
 
   const filtreeriLyhendigaAi=() => {
-    const vastus = tootajad.filter(yksTootaja => yksTootaja.includes("ai") === true); //===true võib panna, aga ei pea
+    const vastus = tootajad.filter(yksTootaja => yksTootaja.nimi.includes("ai") === true); //===true võib panna, aga ei pea
     uuendaTootajad(vastus);
   }
 
   const liidaTahed = () => {
     let summa = 0;
-    tootajad.forEach(tootaja => summa += tootaja.length)
+    tootajad.forEach(tootaja => summa += tootaja.nimi.length)
     return summa;
   }
  
@@ -130,7 +130,10 @@ function Tootajad() {
 
         {tootajad.map((tootaja, index) => 
           <div key={index}>
-            {tootaja}
+            <h3>{tootaja.nimi}</h3>
+            <div>{tootaja.amet}</div>
+            <div>{tootaja.email}</div>
+            <div>{tootaja.vanus}</div>
             <Link to={"/Tootaja/" + index}>
               <button>Vaata lähemalt</button>
             </Link>

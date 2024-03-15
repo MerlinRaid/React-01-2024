@@ -1,1 +1,10 @@
-["Urmet", "Kaido", "Liina", "Maiki", "Heidi", "Kaire", "Anet", "Maarja", "Epp"]
+[{"nimi": "Urmet", "email": "Urmet@gmail.com", "amet": "Direktor","vanus": 55},
+ {"nimi": "Kaido", "email": "Kaido@gmail.com", "amet": "Avalike suhete juht","vanus": 45},
+ {"nimi": "Liina", "email": "Liina@gmail.com", "amet": "Büroojuht","vanus": 35},
+ {"nimi": "Maiki", "email": "Maiki@gmail.com", "amet": "Finantsjuht","vanus": 34}, 
+ {"nimi": "Heidi", "email": "Heidi@gmail.com", "amet": "Tiimijuht","vanus": 43}, 
+ {"nimi": "Kaire", "email": "Kaire@gmail.com", "amet": "Kvaliteedijuht","vanus": 33}, 
+ {"nimi": "Anet", "email": "Anet@gmail.com", "amet": "Kliendihalduse juht","vanus": 40}, 
+ {"nimi": "Maarja", "email": "Maarja@gmail.com", "amet": "Personalijuht","vanus": 41}, 
+ {"nimi": "Epp", "email": "Epp@gmail.com", "amet": "Personalikonsultant","vanus": 30}
+]

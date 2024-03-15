@@ -12,7 +12,10 @@ function YksTootaja() {
 
   return (
     <div>
-      <h2>{tootaja}</h2>
+      <h3>{tootaja.nimi}</h3>
+      <div>{tootaja.amet}</div>
+      <div>{tootaja.email}</div>
+      <div>{tootaja.vanus}</div>
 
     </div>
   )

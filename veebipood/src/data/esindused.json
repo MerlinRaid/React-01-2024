@@ -1,1 +1,7 @@
-["Ülemiste", "Viimsi", "Rocca al Mare" , "Magistrali", "Kristiine", "Järveotsa"]
+[{"nimi": "Ülemiste", "aadress": "Suur-Sõjamäe 4, 11415 Tallinn", "tel": 609300},
+{"nimi": "Viimsi", "aadress": "Paldiski mnt 102, 13522 Tallinn", "tel":  6011244},
+{"nimi": "Rocca al Mare", "aadress": "Sõpruse pst 201, 13411 Tallinn", "tel": 6229226},
+{"nimi": "Magistrali", "aadress": "J. Smuuli tee 43, 11415 Tallinn", "tel": 6229220},
+{"nimi": "Kristiine", "aadress": "Endla 45, 10615 Tallinn", "tel": 6028122},
+{"nimi":"Järveotsa", "aadress": "Järveotsa tee 50c, 13520 Tallinn", "tel": 6011590}
+]

@@ -26,7 +26,9 @@ function HaldaEsindused() {
     <div>
        {keskused.map((keskus,index)  => 
         <div key={index}>
-          {keskus}
+          <div>{keskus.nimi}</div>
+          <div>Aadress: {keskus.aadress}</div>
+          <div>Kontakt: {keskus.tel}</div>
           <button onClick={() => kustutaTallinnaEsindus(index)}>Kustuta</button>  
           <button onClick={() => lisaTallinnaEsindus(keskus)}>Lisa lõppu üks juurde</button> 
           <Link to={"/Muuda-Esindus/" +index}>

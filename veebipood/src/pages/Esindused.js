@@ -14,53 +14,53 @@ function Esindused() {
 
 
 const sorteeriAZ = () => {
-  keskused.sort((a,b) => a.localeCompare(b));  // kui ei toimi, siis ,"et" juurde, et tuleks õiges tähestikus ((a,b) => a.localeCompare(b, "et"))
+  keskused.sort((a,b) => a.nimi.localeCompare(b.nimi));  // kui ei toimi, siis ,"et" juurde, et tuleks õiges tähestikus ((a,b) => a.localeCompare(b, "et"))
   uuendaKeskused(keskused.slice());
 }
 
 
 const sorteeriZA = () => {
-  keskused.sort((a,b) => b.localeCompare(a));
+  keskused.sort((a,b) => b.nimi.localeCompare(a.nimi));
   uuendaKeskused(keskused.slice());
 }
 
 
 const sorteeriTahedKasvavalt = () => {
-  keskused.sort((a, b) => a.length - b.length); 
+  keskused.sort((a, b) => a.nimi.length - b.nimi.length); 
   uuendaKeskused(keskused.slice());
 }
 
 const sorteeriTahedKahanevalt = () => {
-keskused.sort((a, b) => b.length - a.length);
+keskused.sort((a, b) => b.nimi.length - a.nimi.length);
 uuendaKeskused(keskused.slice());
 }
 const sorteeriTeineTahtAZ = () => {
-  keskused.sort((a,b) => a[1].localeCompare(b[1])); 
+  keskused.sort((a,b) => a.nimi[1].localeCompare(b.nimi[1])); 
     uuendaKeskused(keskused.slice());
 }
 
 const filtreeriEgaLoppevad = () => {
-  const vastus = keskused.filter(keskus => keskus.endsWith("e"));
+  const vastus = keskused.filter(keskus => keskus.nimi.endsWith("e"));
   uuendaKeskused(vastus);
 }
 
 const filtreeriVah7Tahelised = () => {
-  const vastus = keskused.filter(keskus => keskus.length >= 7);
+  const vastus = keskused.filter(keskus => keskus.nimi.length >= 7);
   uuendaKeskused(vastus)
 }
 
 const filtreeri9Tahelised = () => {
-  const vastus = keskused.filter(keskus => keskus.length === 9); 
+  const vastus = keskused.filter(keskus => keskus.nimi.length === 9); 
   uuendaKeskused(vastus)
 }
 
 const filtreeriLyhenditIsSisaldavad = () => {
-  const vastus = keskused.filter(keskus => keskus.includes("is") === true); 
+  const vastus = keskused.filter(keskus => keskus.nimi.includes("is") === true); 
   uuendaKeskused(vastus);
 }
 
 const filtreeriNeljasTahtI = () => {
-  const vastus = keskused.filter(keskus => keskus[3] === "i");
+  const vastus = keskused.filter(keskus => keskus.nimi[3] === "i");
   uuendaKeskused(vastus);
 }
 
@@ -101,7 +101,9 @@ const filtreeriNeljasTahtI = () => {
 
       {keskused.map((keskus,index)  => 
         <div key={index}>
-          {keskus}
+          <div>{keskus.nimi}</div>
+          <div>Aadress: {keskus.aadress}</div>
+          <div>Kontakt: {keskus.tel}</div>
           <Link to={"/Esindus/" +index}>
             <button>Vaata lähemalt</button>
           </Link>

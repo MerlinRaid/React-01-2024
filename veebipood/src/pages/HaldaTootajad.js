@@ -23,7 +23,10 @@ function HaldaTootajad() {
     <div>
          {tootajad.map((tootaja, index) => 
          <div key={index}>
-            {tootaja}
+            <div>{tootaja.nimi}</div>
+            <div>{tootaja.amet}</div>
+            <div>{tootaja.email}</div>
+            <div>{tootaja.vanus}</div>
             <button onClick={() => kustutaTootaja(index)}>Kustuta</button> 
             <button onClick={() => lisaTootaja(tootaja)}>Lisa lõppu juurde</button>
             <Link to={"/Muuda-Tootaja/" +index}>

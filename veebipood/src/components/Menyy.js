@@ -63,6 +63,10 @@ function Menyy() {
               <span>Lisa Tootaja</span>
             </Link>
 
+            <Link className="navlink"  to="/Lisa-Esindus">
+              <span>Lisa Esindus</span>
+            </Link>
+
             <Link className="navlink"  to="/HaldaTootajad">
               <span>Halda Töötajaid</span>
             </Link>

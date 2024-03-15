@@ -5,6 +5,8 @@ import { ToastContainer, toast } from 'react-toastify';
 
 function LisaEsindus() {
     const nimiRef = useRef();
+    const aadressRef = useRef();
+    const kontaktRef = useRef();
 
     const lisa = () => {
         if (nimiRef.current.value  === "") {
@@ -22,15 +24,25 @@ function LisaEsindus() {
             toast.error("Esindus peab olema vähemalt 3 tähemärki");
             return; 
           } 
-        esindusedFailist.push(nimiRef.current.value);
+        esindusedFailist.push({
+          "nimi": nimiRef.current.value,
+          "aadress": aadressRef.current.value,
+          "tel": Number(kontaktRef.current.value)
+        });
         toast.success("Esindus lisatud");
         nimiRef.current.value = "";
+        aadressRef.current.value = "";
+        kontaktRef.current.value = "";
       }
 
   return (
     <div>
       <label>Uue Esinduse nimi</label> <br />
       <input ref={nimiRef} type="text" /> <br />
+      <label>Uue Esinduse aadress</label> <br />
+      <input ref={aadressRef} type="text" /> <br />
+      <label>Uue Esinduse kontakt</label> <br />
+      <input ref={kontaktRef} type="number" /> <br />
       <button onClick={lisa}>Lisa</button><br />
 
       <ToastContainer
