@@ -20,7 +20,7 @@ function App() {
       <button className="nupp" >Võta meiega ühendust</button>
     </Link>
       <Link to= "/meist">
-      <button className="nupp" >Info meist</button>
+      <button className="nupp" >Meist</button>
       </Link>
 
 
