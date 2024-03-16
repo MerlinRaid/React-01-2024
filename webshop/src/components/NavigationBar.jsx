@@ -12,6 +12,14 @@ function NavigationBar() {
         <button>Cart</button>
       </Link>
 
+      <Link to="contact">
+        <button>Contact Us</button>
+      </Link>
+
+      <Link to="shops">
+        <button>Shops</button>
+      </Link>
+
 
     </div>
   )
