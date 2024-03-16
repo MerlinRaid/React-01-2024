@@ -20,6 +20,14 @@ function NavigationBar() {
         <button>Shops</button>
       </Link>
 
+      <Link to="login">
+        <button>Login</button>
+      </Link>
+
+      <Link to="signup">
+        <button>Sign up</button>
+      </Link>
+
 
     </div>
   )
