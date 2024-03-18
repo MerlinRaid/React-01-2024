@@ -18,7 +18,7 @@ function Kinkekaart() {
       <button className={aktiivne === 50 ? "summa-aktiivne" : "summa"}  onClick={() => muudaAktiivne(50) } >50 €</button>
       <button className={aktiivne === 100 ? "summa-aktiivne" : "summa"} onClick={() => muudaAktiivne(100) } >100 €</button>
       <button> <input type="text" /> </button>
-     <img src="kingitus.png" className="kingitus" alt="" />
+     <img src="/kingitus.png" className="kingitus" alt="" />
 
       <button disabled ={kogus === 1} onClick={() => muudaKogus( kogus - 1)} >-</button>
       <span>{kogus}</span>
