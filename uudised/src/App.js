@@ -7,6 +7,8 @@ import Meist from './pages/Meist';
 import Uudised from './pages/Uudised';
 import LisaUudis from './pages/LisaUudis';
 import HaldaUudiseid from './pages/HaldaUudiseid';
+import YksUudis from './pages/YksUudis';
+import MuudaUudis from './pages/MuudaUudis';
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
         <Route path='meist' element={<Meist/>} />
         <Route path='lisa-uudis' element={<LisaUudis/>} />
         <Route path='halda' element={<HaldaUudiseid/>} />
+        <Route path='yks-uudis/:index'element={<YksUudis/>} />
+        <Route path='muuda-uudis/:index'element={<MuudaUudis/>} />
       </Routes> 
     </div>
   );

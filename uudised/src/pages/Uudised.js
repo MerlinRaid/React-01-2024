@@ -1,4 +1,5 @@
 import toast, { Toaster } from 'react-hot-toast'
+import { Link } from 'react-router-dom';
 
 function Uudised() {
 
@@ -78,7 +79,9 @@ function Uudised() {
         {uudised.map((uudis, index) => <div key={index}>
           {uudis}
           <br /><br />
-
+          <Link to={"/yks-uudis/" + index}>
+          <button>Vaata lähemalt</button>
+          </Link>
         </div> )}
 
         {uudised.length === 0 && <div>Ühtegi uudist hetkel pole! Lisame õige pea.</div>  } 
