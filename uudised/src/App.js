@@ -5,6 +5,8 @@ import Avaleht from './pages/Avaleht';
 import Kontakt from './pages/Kontakt';
 import Meist from './pages/Meist';
 import Uudised from './pages/Uudised';
+import LisaUudis from './pages/LisaUudis';
+import HaldaUudiseid from './pages/HaldaUudiseid';
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
       <button className="nupp" >Avalehele</button>
     </Link>
     <Link to= "/uudised">
-      <button className="nupp">Uudsite lehele</button>
+      <button className="nupp">Uudised</button>
     </Link>
     <Link to= "/kontakt">
       <button className="nupp" >Võta meiega ühendust</button>
@@ -23,12 +25,24 @@ function App() {
       <button className="nupp" >Meist</button>
       </Link>
 
+      <Link to= "/lisa-uudis">
+      <button className="nupp" >Lisa uudis</button>
+      </Link>
+
+      <Link to= "/halda">
+      <button className="nupp" >Halda uudiseid</button>
+      </Link>
+
+      
+
 
       <Routes>
         <Route path='' element={ <Avaleht/> } />
         <Route path= 'uudised' element={ <Uudised/> } />
         <Route path='kontakt' element= { <Kontakt/> } />
         <Route path='meist' element={<Meist/>} />
+        <Route path='lisa-uudis' element={<LisaUudis/>} />
+        <Route path='halda' element={<HaldaUudiseid/>} />
       </Routes> 
     </div>
   );
