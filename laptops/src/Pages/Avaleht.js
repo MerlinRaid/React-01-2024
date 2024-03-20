@@ -1,19 +1,30 @@
+import React from 'react';
+
 function Avaleht() {
-const computers = JSON.parse(localStorage.getItem("laptops")) || [];
+    const computers = (JSON.parse(localStorage.getItem("laptops")) || []);
 
-return (
-<div className="avaleht-text">
-  <div>Tere</div> <br /><br />
-  <div>Siin lehel saad sülearvuteid vaadata</div>
-    { computers.map(oneComputer =>
-      <div>
-        <div>{oneComputer.mark}</div>
-        <div>{oneComputer.mudel}</div>
-        <div>{oneComputer.maksumus}</div>
-      <button>Teeme temaga midagi</button>
-    </div>) }
-</div>)
+    const addToCart = (clickedComputer) => {
+        const cart = JSON.parse(localStorage.getItem("cartlaptops")) || [];
+        cart.push(clickedComputer);
+        localStorage.setItem("cartlaptops", JSON.stringify(cart));
+    }
 
+    return (
+        <div className="avaleht-text">
+            <div>Tere</div> 
+            <div>Siin lehel saad sülearvuteid vaadata</div>
+            <br /><br />
+            {computers.map(oneComputer =>
+                <div key={oneComputer.id}>
+                    <div>Mark: {oneComputer.mark}</div>
+                    <div>Mudel: {oneComputer.mudel}</div>
+                    <div>Maksumus: {oneComputer.maksumus}€</div>
+                    <button onClick={() => addToCart(oneComputer)}>Lisa ostukorvi</button>
+                    <br /><br />
+                </div>
+            )}
+        </div>
+    )
 }
 
-export default Avaleht
+export default Avaleht;

@@ -21,8 +21,8 @@ export default function Navbar() {
                     <Link to="/" className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Avalehele</Link>
                     <Link to="all" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Kõik arvutid</Link>
                     <Link to="add" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Lisa arvuti</Link>
-                    {/* <a href="https://www.teachradar.com/" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Arvutite review'd</a> */}
-                    <Link to="new" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Lisa arvuti uus </Link>
+                    <Link to="cart" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Ostukorv</Link>
+                    <Link to="new" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Lisa uus arvuti </Link>
                   </div>
                 </div>
               </div>
