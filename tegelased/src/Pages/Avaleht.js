@@ -1,31 +1,40 @@
 import { useState } from "react"
 
 function Avaleht() {
-    const tegelased = [
-        {eesnimi: "Mickey", perenimi: "Mouse", elukoht: "Disneyland"},
-        {eesnimi: "Minnie", perenimi: "Mouse", elukoht: "Disneyland"},
-        {eesnimi: "Winnie", perenimi: "Pooh", elukoht: "Hundred Acre Wood"},
-        {eesnimi: "Roo", perenimi: "Kangaroo", elukoht: "Hundred Acre Wood"},
-        {eesnimi: "Scooby", perenimi: "Doo", elukoht: "Crystal Cove"},
-    ]
-
+    // const tegelased = [
+    //     // {eesnimi: "Mickey", perenimi: "Mouse", elukoht: "Disneyland", vanus: 12},
+    //     // {eesnimi: "Minnie", perenimi: "Mouse", elukoht: "Disneyland", vanus: 13},
+    //     // {eesnimi: "Winnie", perenimi: "Pooh", elukoht: "Hundred Acre Wood", vanus: 14},
+    //     // {eesnimi: "Roo", perenimi: "Kangaroo", elukoht: "Hundred Acre Wood", vanus: 15},
+    //     // {eesnimi: "Scooby", perenimi: "Doo", elukoht: "Crystal Cove", vanus: 16}
+    // ]
+    const tegelased = JSON.parse(localStorage.getItem("tegelased") || [])
     const [klikitudNimi,uuendaKlikitudNimi] = useState ("");
 
     const kuvaNimi = (tegelane) => {
         //console.log(tegelane.eesnimi);
         uuendaKlikitudNimi(tegelane.eesnimi);
         }
-
+    
+   
+    
+    const valiTegelane = (yksTegelane) =>{
+        const valitud = JSON.parse(localStorage.getItem("valitudTegelane")) || [];
+        valitud.push(yksTegelane);
+        localStorage.setItem("valitudTegelane", JSON.stringify(valitud));
+    }
 
   return (
 <div>
     
     { klikitudNimi !== "" && <div>Klikisid tegelase {klikitudNimi} peal</div>}
      {tegelased.map (tegelane => <div>
-        <div>{tegelane.eesnimi}</div>
-        <div>{tegelane.perenimi}</div>
-        <div>{tegelane.elukoht}</div>
+        <div>Eesnimi: {tegelane.eesnimi}</div>
+        <div>Perekonnanimi: {tegelane.perenimi}</div>
+        <div>Elukoht: {tegelane.elukoht}</div>
+        <div>Vanus: {tegelane.vanus}</div>
         <button onClick={() => kuvaNimi(tegelane)}  >Kuva nimi</button>
+        <button onClick={() => valiTegelane(tegelane)}>Vali tegelane</button>
         <br /><br />
 
      </div> )}

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { useParams } from 'react-router-dom'
-import Uudised from './Uudised';
+
 
 function MuudaUudis() {
     const {index} =useParams();
