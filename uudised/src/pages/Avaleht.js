@@ -13,13 +13,17 @@ function Avaleht() {
 
     return ( 
     <div>
-        {postitused.map(element => <div> 
+        {postitused.map((element, index) => <div> 
             <div><i>{element.userId}</i></div>
             <div><u>{element.id}</u></div>
             <div><b>{element.title}</b></div>
             <div>{element.body}</div> 
             <Link to={"/kasutaja-postitused/" + element.userId}>
             <button>Kõik kasutaja postitused</button>
+            </Link>
+
+            <Link to={"/yks-postitus/" + element.id}>
+            <button>Vaata postitust</button>
             </Link>
             
         </div>  )}

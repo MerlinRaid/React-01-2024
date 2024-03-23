@@ -10,6 +10,7 @@ import HaldaUudiseid from './pages/HaldaUudiseid';
 import YksUudis from './pages/YksUudis';
 import MuudaUudis from './pages/MuudaUudis';
 import KasutajaPostitused from './pages/KasutajaPostitused';
+import YksPostitus from './pages/YksPostitus';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path='yks-uudis/:index'element={<YksUudis/>} />
         <Route path='muuda-uudis/:index'element={<MuudaUudis/>} />
         <Route path='kasutaja-postitused/:kasutajaId'element={<KasutajaPostitused/>} />
+        <Route path='yks-postitus/:postituseId'element={<YksPostitus/>} />
       </Routes> 
     </div>
   );
