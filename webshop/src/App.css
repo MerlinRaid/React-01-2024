@@ -130,3 +130,20 @@
   color: white;
   border-radius: 10px;
 }
+
+.lang {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.lang:hover {
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.lang:active {
+  padding: 1px;
+}

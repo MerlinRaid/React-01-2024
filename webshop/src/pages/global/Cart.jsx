@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 //import cartFromFile from "../../data/cart.json"
+import "../../css/Cart.css";
 
 function Cart() {                 // 1 ja 2 samm (homapge lehel sammud)
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
@@ -42,7 +43,7 @@ function Cart() {                 // 1 ja 2 samm (homapge lehel sammud)
    const calculateTotal = () => {
      let amount = 0;
      cart.forEach(product => amount = amount + product.toode.price * product.kogus);
-     return amount;
+     return amount.toFixed(2);
    }
 
   return (
@@ -57,31 +58,39 @@ function Cart() {                 // 1 ja 2 samm (homapge lehel sammud)
       </div>}
 
         {cart.map((product, index) => 
-          <div key={index}>
-            {index + 1}.
-            <img style={{width: "50px"}} src={product.toode.image} alt="" />
-            {product.toode.title} - {product.toode.price} €
-            <button onClick={() => decraseQuantity(index)} >-</button>
-            <div>{product.kogus} tk</div>
-            <div>{product.toode.price * product.kogus} €</div>
-            <button onClick={() => incraseQuantity(index)} >+</button>
-            {/* kuva KODUS rating välja
-              pange koguse kõrvale toodete keskmine rating:
-              reitingu kogusumma jagatud koguarv
-              ärge arvestage koguseid. pluus 6tk, kell 3 tk- arvestat ikka nagu 1 pluus, 1 kell
-              vihje nagu hinna arvutus
-            */}
-            <button onClick={() => deleteFromCart(index)}>Delate</button> 
+          <div className='product' key={index}>
+           <div className='number'>{index + 1}.</div>
+            <img className='image' style={{width: "50px"}} src={product.toode.image} alt="" />
+            <div className='title'>{product.toode.title}</div>  
+            <div className='price'>{product.toode.price.toFixed(2)} € </div>
+           <div className='quantity'> 
+              <img className='button' onClick={() => decraseQuantity(index)} src="/minus.png" alt="" />
+              <div >{product.kogus} tk</div>
+              <img className='button' onClick={() => incraseQuantity(index)} src="/plus.png" alt="" />
+            </div>
+            <div className='total'>{(product.toode.price * product.kogus).toFixed(2)} €</div>
+            <img className='button' onClick={() => deleteFromCart(index)} src="/remove.png" alt="" />
             {/* <button onClick={() => addToCart(product)}>Add one to the end</button>  */}
           </div> )}
-
-          <h3>Total amount: {calculateTotal()}€</h3>
-
-          <select>
-            {parcelMachines.map(pm=> <option>{pm.NAME}</option>)}
-          </select>
+          {cart.length > 0 && 
+            <React.Fragment>
+            <h3>Total amount: {calculateTotal()}€</h3>
+            <select>
+              {parcelMachines
+                .filter(pm=> pm.A0_NAME === "EE")
+                .map(pm=> <option>{pm.NAME}</option>)}
+            </select>
+          </React.Fragment>}
     </div>
   )
 }
 
 export default Cart
+
+    /* 
+    kuva KODUS rating välja
+    pange koguse kõrvale toodete keskmine rating:
+    reitingu kogusumma jagatud koguarv
+    ärge arvestage koguseid. pluus 6tk, kell 3 tk- arvestat ikka nagu 1 pluus, 1 kell
+   vihje nagu hinna arvutus
+            */

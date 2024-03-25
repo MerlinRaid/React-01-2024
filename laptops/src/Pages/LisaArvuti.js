@@ -19,7 +19,7 @@ function LisaArvuti() {
       "mudel": mudelRef.current.value,
       "maksumus": maksumusRef.current.value,
     }
-  
+    console.log(newComputer)
     const computer = JSON.parse(localStorage.getItem("laptops")) || [];
     computer.push(newComputer)
     localStorage.setItem("laptops", JSON.stringify(computer));
