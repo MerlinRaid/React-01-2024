@@ -28,6 +28,8 @@ function Employees() {
       setMessage("Last name is required and should contain only letters!");
     } else if (emailRef.current.value === "") {
       setMessage("Email is required and should match a valid email pattern!");
+    } else if (emailRef.current.value.includes("@") === false) {
+        setMessage("Email must include @");
     } else if (!avatarRef.current.files.length) {
       setMessage("Avatar is required!");
     } else {

@@ -50,19 +50,18 @@ function Products() {
       <Table className="table table-hover table-bordered">
         <thead>
         <tr>
-          <th scope="col"><b>Product</b></th>
-          <th scope="col"><b>Price (€)</b></th>
-          <th scope="col"><b>Quantity (pcs)</b></th>
-          <th scope="col"><b>Store</b></th>
+          <th scope="col">Product</th>
+          <th scope="col">Price (€)</th>
+          <th scope="col">Quantity (pcs)</th>
+          <th scope="col">Store</th>
         </tr>
         </thead>
         <tbody>
         {products.map(product => 
             <tr key={product.name + product.price}>
               <td>{product.name}</td>
-              <td>{product.price}</td>
-              {/*  TODO: Display the quantity in red if it is lower than 3 */}
-              <td style={{ color: product.quantity < 3 ? 'red' : 'inherit' }}>{product.quantity}</td>
+              <td>{product.price}€</td>
+              <td style={{ color: product.quantity < 3 ? "red": "null" }}>{product.quantity}</td>
               <td>{product.store}</td>
             </tr>
           )}
