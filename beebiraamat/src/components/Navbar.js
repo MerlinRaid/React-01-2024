@@ -39,6 +39,9 @@ const Navbar = () => {
                     <li className='nav-item'>
                         <a href='#kinkekaart' onClick={closeMenu}>Kinkekaart</a>
                     </li>
+                    <li className='nav-item'>
+                        <a href='#login' onClick={closeMenu}>Logi sisse</a>
+                    </li>
                 </ul>
             </nav>
         </div>

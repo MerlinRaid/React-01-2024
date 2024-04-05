@@ -1,0 +1,72 @@
+.hinnad {
+    width: 100%;
+}
+
+.hinnad .container {
+    width: 1240px;
+    margin: 4rem auto;
+    padding: 4rem 0rem;
+}
+
+.hinnad h2 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.hinnad .container .content {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+    margin: 4rem 0;
+}
+
+.hinnad .card {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgb(0,0,0,.2);
+    padding: 1rem;
+}
+
+.hinnad img {
+    width: 120px;
+    height: auto;
+    border-radius: 20px;
+    margin-top: -2rem;
+}
+
+.imgHinnad {
+    width: 300px;
+    height: auto;  
+}
+
+.hinnad .card p {
+    color: #3c3b3b;
+    font-size: 1.1rem;
+    margin: 12px;
+}
+
+.hinnad .card span {
+    color: #e3d002;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.hinnad .button {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    color: #333;
+}
+
+@media screen and (max-width: 940px) {
+    .hinnad .container {
+        width: 100%;
+    }
+
+    .hinnad .container .content {
+        grid-template-columns: 1fr;
+    }
+
+    .hinnad .card {
+        max-width: 100%;
+        margin: 1rem;
+    }
+}

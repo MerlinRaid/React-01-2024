@@ -1,5 +1,6 @@
 import React from 'react'
 import './Hero.css'
+import {Link} from 'react-router-dom'; 
 
 const Hero = () => {
     return (
@@ -10,7 +11,9 @@ const Hero = () => {
                 <br />
                 <p>Milleks raisata aega?</p>
                 <p>Ole kaval ja vali digitaalselt täidetav beebiraamat!</p>
-                <button href='/' className='button'>Alusta täitmist</button>
+                <Link to='/hinnad'>
+                    <button className='button'>Alusta täitmist</button>
+                </Link>
             </div>
         </div>
     )

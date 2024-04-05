@@ -1,5 +1,7 @@
 import React from 'react'
 import './Kinkekaart.css'
+import {Link} from 'react-router-dom'; 
+
 
 const Hero = () => {
     return (
@@ -10,7 +12,10 @@ const Hero = () => {
                 <br />
                 <p></p>
                 <p>Soetades kinkekaarti on vanematele raamatu täitmine ja füüsilisel kujul raamatu tellimine tasuta.</p>
-                <button href='/' className='button'>Osta kinkekaart</button>
+                <Link to={"/kinkekaartiOst"}>
+                     <button className='button'>Osta kinkekaart</button>
+                </Link>
+
             </div>
         </div>
     )
