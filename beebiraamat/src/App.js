@@ -7,8 +7,10 @@ import Demo from './components/Demo';
 import Kinkekaart from './components/Kinkekaart';
 import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
-import Hinnad from './components/Hinnad';
 import KinkekaartiOst from './components/KinkekaartiOst';
+import Hinnad from './components/Hinnad';
+import Login from './components/Login';
+import Register from './components/Register';
 
 
 
@@ -21,12 +23,13 @@ function App() {
       <Testimonials />
       <Demo />
       <Kinkekaart />
-      <Hinnad />
       <Footer />
 
       <Routes>
         <Route path='/hinnad' element={ <Hinnad /> } />
         <Route path='/kinkekaartiOst' element={ <KinkekaartiOst /> } />
+        <Route path='/login' element={ <Login /> } />
+        <Route path='/regitser' element={ <Register /> } />
 
       </Routes>
     </div>

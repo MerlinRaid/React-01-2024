@@ -2,6 +2,7 @@ import React from 'react'
 import kink from './images/kink.png'
 import tasu from './images/tasu.png'
 import alarm from './images/alarm.png'
+import { Link } from "react-router-dom"
 
 import './Hinnad.css'
 
@@ -43,8 +44,13 @@ const Hinnad = () => {
                 </div>
             </div>
         </div>
-            <button className='button'>REGISTREERU</button>
-            <button className='button'>LOGI SISSE</button>
+        <Link to={'/regitser'} >
+        <button className='button'>REGISTREERU</button>
+        </Link>
+        <Link to={'/login'} >
+        <button className='button'>LOGI SISSE</button>
+        </Link>
+            
         </div>
         
     )
