@@ -28,10 +28,10 @@ const Navbar = () => {
                         <a href='/' onClick={closeMenu}>Avaleht</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#about' onClick={closeMenu}>Beebiraamat</a>
+                        <a href='#tutvustus' onClick={closeMenu}>Beebiraamat</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#testimonials' onClick={closeMenu}>Eelised</a>
+                        <a href='#eelised' onClick={closeMenu}>Eelised</a>
                     </li>
                     <li className='nav-item'>
                         <a href='#demo' onClick={closeMenu}>Demo</a>
@@ -40,7 +40,13 @@ const Navbar = () => {
                         <a href='#kinkekaart' onClick={closeMenu}>Kinkekaart</a>
                     </li>
                     <li className='nav-item'>
+                        <a href='/hinnad' onClick={closeMenu}>Hinnad</a>
+                    </li>
+                    <li className='nav-item'>
                         <a href='/login' onClick={closeMenu}>Logi sisse</a>
+                    </li>
+                    <li className='nav-item'>
+                        <a href='/register' onClick={closeMenu}>Registreeru</a>
                     </li>
                 </ul>
             </nav>
