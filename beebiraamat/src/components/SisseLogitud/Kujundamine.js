@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { SketchPicker } from 'react-color';
 
-function Proov() {
+
+
+function Kujundamine() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [image, setImage] = useState('');
-  const [color, setColor] = useState('var(--overlay)'); // Muuda vastavalt CSS-ile
+  const [color, setColor] = useState('var(--overlay)'); 
   const [titleStyle, setTitleStyle] = useState('italic');
   const [authorStyle, setAuthorStyle] = useState('normal');
   const [titleFont, setTitleFont] = useState('Arial');
   const [authorFont, setAuthorFont] = useState('Arial');
-  const [titleSize, setTitleSize] = useState(36); // Muuda vastavalt CSS-ile
-  const [authorSize, setAuthorSize] = useState(22); // Muuda vastavalt CSS-ile
+  const [titleSize, setTitleSize] = useState(36); 
+  const [authorSize, setAuthorSize] = useState(22); 
   const [titleWeight, setTitleWeight] = useState('normal');
   const [authorWeight, setAuthorWeight] = useState('normal');
 
@@ -63,10 +65,11 @@ function Proov() {
   };
 
   return (
-    <div className="container">
-      <div style={{ display: 'flex' }}>
+    <div >
+      <div  style={{ display: 'flex' }}>
         <div style={{ marginRight: '20px', width: '50%' }}>
           <h1>DigiBeebi Beebiraamat</h1>
+          <span className='line'></span>
           <form onSubmit={handleSubmit}>
             <label htmlFor="title">Lapse nimi:</label>
             <input
@@ -111,7 +114,7 @@ function Proov() {
               <option value="Arial">Arial</option>
               <option value="Times New Roman">Times New Roman</option>
               <option value="Verdana">Verdana</option>
-              {/* Lisa siia veel teisi fondinimesid */}
+              
             </select>
             <br />
             <br />
@@ -167,7 +170,7 @@ function Proov() {
               <option value="Arial">Arial</option>
               <option value="Times New Roman">Times New Roman</option>
               <option value="Verdana">Verdana</option>
-              {/* Lisa siia veel teisi fondinimesid */}
+              
             </select>
             <br />
             <br />
@@ -196,6 +199,7 @@ function Proov() {
             <button type="submit" className="button" style={{ backgroundColor: 'var(--secondary-color)', border: '1px solid var(--secondary-color)', color: '#333' }}>Salvesta raamat</button>
           </form>
         </div>
+        <h4>Raamatu eelvaade:</h4>
         <div style={{ border: '1px solid black', padding: '10px', backgroundColor: color, width: '50%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '300px' }}>
           {image && <img src={image} alt="Pilt" style={{ maxWidth: '100%', maxHeight: '300px' }} />}
           <div style={{ color: 'white', textAlign: 'center' }}>
@@ -210,4 +214,4 @@ function Proov() {
   );
 }
 
-export default Proov;
+export default Kujundamine;
