@@ -1,4 +1,4 @@
-import toast, { Toaster } from 'react-hot-toast'
+// import toast, { Toaster } from 'react-hot-toast'
 import { Link } from 'react-router-dom';
 
 function Uudised() {
@@ -85,7 +85,7 @@ function Uudised() {
         </div> )}
 
         {uudised.length === 0 && <div>Ühtegi uudist hetkel pole! Lisame õige pea.</div>  } 
-        <Toaster />
+        {/* <Toaster /> */}
         
     </div> 
     );

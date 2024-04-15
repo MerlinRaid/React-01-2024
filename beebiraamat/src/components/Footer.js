@@ -10,10 +10,10 @@ const Footer = () => {
                         <a href='/'>Avaleht</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#about'>Beebiraamat</a>
+                        <a href='#tutvustus'>Beebiraamat</a>
                     </li>
                     <li className='nav-item'>
-                        <a href='#testimonials'>Eelised</a>
+                        <a href='#eelised'>Eelised</a>
                     </li>
                     <li className='nav-item'>
                         <a href='#demo'>Demo</a>

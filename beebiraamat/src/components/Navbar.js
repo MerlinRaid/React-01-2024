@@ -56,7 +56,7 @@ const Navbar = () => {
                     ) : (
                         <>
                             <li className='nav-item'>
-                                <a href='/kujundamine' onClick={closeMenu}>Kujundamine</a>
+                                <a href='/lapseandmed' onClick={closeMenu}>Alusta Raamatuga</a>
                             </li>
                             <li className='nav-item'>
                                 <a href='/konto' onClick={closeMenu}>Konto</a>

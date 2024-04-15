@@ -10,6 +10,10 @@ import Register from './components/Register';
 import Homepage from './components/Homepage';
 import Kujundamine from './components/SisseLogitud/Kujundamine';
 import Konto from './components/SisseLogitud/Konto';
+import LapseAndmed from './components/SisseLogitud/LapseAndmed';
+import SinuRaamatud from './components/SisseLogitud/Konto/SinuRaamatud';
+import Arved from './components/SisseLogitud/Konto/Arved';
+import SinuKonto from './components/SisseLogitud/Konto/SinuKonto';
 
 
 
@@ -27,6 +31,11 @@ function App() {
         <Route path='/' element={ <Homepage /> } />
         <Route path='/kujundamine' element={currentUser ? <Kujundamine /> : <Login />}></Route>
         <Route path='/konto' element={currentUser ? <Konto /> : <Login />}></Route>
+        <Route path='/lapseandmed' element={currentUser ? <LapseAndmed /> : <Login />}></Route>
+        <Route path='/sinuraamatud' element={currentUser ? <SinuRaamatud /> : <Login />}></Route>
+        <Route path='/arved' element={currentUser ? <Arved /> : <Login />}></Route>
+        <Route path='/sinukonto' element={currentUser ? <SinuKonto /> : <Login />}></Route>
+        
       </Routes>
       
       <Footer />

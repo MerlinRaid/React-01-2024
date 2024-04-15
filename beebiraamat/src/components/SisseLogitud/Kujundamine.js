@@ -71,7 +71,8 @@ function Kujundamine() {
           <h1>DigiBeebi Beebiraamat</h1>
           <span className='line'></span>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="title">Lapse nimi:</label>
+            <label htmlFor="title"><b>Pealkiri:</b></label>
+            <div><i>Tavaliselt lapse nimi</i></div>
             <input
               type="text"
               id="title"
@@ -81,7 +82,7 @@ function Kujundamine() {
             />
             <br />
             <br />
-            <label htmlFor="titleStyle">Lapse nime stiil:</label>
+            <label htmlFor="titleStyle">Perkirja kalle:</label>
             <select
               id="titleStyle"
               value={titleStyle}
@@ -89,12 +90,10 @@ function Kujundamine() {
             >
               <option value="normal">Tavaline</option>
               <option value="italic">Kursiiv</option>
-              <option value="bold">Paks</option>
-              <option value="bold italic">Paks ja kursiiv</option>
             </select>
             <br />
             <br />
-            <label htmlFor="titleWeight">Lapse nime raskus:</label>
+            <label htmlFor="titleWeight">Pelkirja paksus:</label>
             <select
               id="titleWeight"
               value={titleWeight}
@@ -105,7 +104,7 @@ function Kujundamine() {
             </select>
             <br />
             <br />
-            <label htmlFor="titleFont">Lapse nime font:</label>
+            <label htmlFor="titleFont">Pealkirja font:</label>
             <select
               id="titleFont"
               value={titleFont}
@@ -118,7 +117,7 @@ function Kujundamine() {
             </select>
             <br />
             <br />
-            <label htmlFor="titleSize">Lapse nime suurus (px):</label>
+            <label htmlFor="titleSize">Pealkirja suurus (px):</label>
             <input
               type="number"
               id="titleSize"
@@ -127,7 +126,8 @@ function Kujundamine() {
             />
             <br />
             <br />
-            <label htmlFor="author">Tekst lapse nime alla:</label>
+            <label htmlFor="author"><b>Tekst pealkirja alla:</b></label>
+            <div><i>Nt: Meie esimene aasta</i></div>
             <input
               type="text"
               id="author"
@@ -137,7 +137,7 @@ function Kujundamine() {
             />
             <br />
             <br />
-            <label htmlFor="authorStyle">Teksti stiil lapse nime all:</label>
+            <label htmlFor="authorStyle">All teksti kalle :</label>
             <select
               id="authorStyle"
               value={authorStyle}
@@ -145,12 +145,11 @@ function Kujundamine() {
             >
               <option value="normal">Tavaline</option>
               <option value="italic">Kursiiv</option>
-              <option value="bold">Paks</option>
-              <option value="bold italic">Paks ja kursiiv</option>
+         
             </select>
             <br />
             <br />
-            <label htmlFor="authorWeight">Teksti raskus lapse nime all:</label>
+            <label htmlFor="authorWeight">All teksti paksus:</label>
             <select
               id="authorWeight"
               value={authorWeight}
@@ -161,7 +160,7 @@ function Kujundamine() {
             </select>
             <br />
             <br />
-            <label htmlFor="authorFont">Teksti font lapse nime all:</label>
+            <label htmlFor="authorFont">All teksti font:</label>
             <select
               id="authorFont"
               value={authorFont}
@@ -174,7 +173,7 @@ function Kujundamine() {
             </select>
             <br />
             <br />
-            <label htmlFor="authorSize">Teksti suurus lapse nime all (px):</label>
+            <label htmlFor="authorSize">All teksti suurus (px):</label>
             <input
               type="number"
               id="authorSize"
@@ -183,7 +182,7 @@ function Kujundamine() {
             />
             <br />
             <br />
-            <label htmlFor="image">Pilt:</label>
+            <label htmlFor="image"><b>Pilt:</b></label>
             <input
               type="file"
               id="image"
@@ -192,11 +191,11 @@ function Kujundamine() {
             />
             <br />
             <br />
-            <label htmlFor="color">Raamatu värv:</label>
+            <label htmlFor="color"><b>Raamatu värv:</b></label>
             <SketchPicker color={color} onChange={handleColorChange} />
             <br />
             <br />
-            <button type="submit" className="button" style={{ backgroundColor: 'var(--secondary-color)', border: '1px solid var(--secondary-color)', color: '#333' }}>Salvesta raamat</button>
+            <button type="submit" className="button" style={{ backgroundColor: 'var(--secondary-color)', border: '1px solid var(--secondary-color)', color: '#333' }}>Edasi sisu juurde</button>
           </form>
         </div>
         <h4>Raamatu eelvaade:</h4>
